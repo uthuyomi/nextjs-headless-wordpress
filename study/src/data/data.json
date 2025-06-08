@@ -14,24 +14,27 @@
     "buttonlink": "#",
     "imageUrl": "/assets/hero.png"
   },
-  "categories": [
-    {
-      "label": "HTML",
-      "description": "HTMLの沼束をすぼう"
-    },
-    {
-      "label": "CSS",
-      "description": "CSSの悲束を学ぼうう"
-    },
-    {
-      "label": "JS",
-      "description": "JavaScript の沼束すむう"
-    },
-    {
-      "label": "PHP",
-      "description": "PHP の悲束を学ぼうう"
-    }
-  ],
+  "categories": {
+      "title": "学習カテゴリ",
+    "category": [
+      {
+        "label": "HTML",
+        "description": "HTMLの沼束をすぼう"
+      },
+      {
+        "label": "CSS",
+        "description": "CSSの悲束を学ぼうう"
+      },
+      {
+        "label": "JS",
+        "description": "JavaScript の沼束すむう"
+      },
+      {
+        "label": "PHP",
+        "description": "PHP の悲束を学ぼうう"
+      }
+    ]
+  },
   "articles": [
     {
       "title": "「map」って何？\n根ぃ答にわかりやすく卿読",
