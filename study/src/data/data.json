@@ -1,0 +1,51 @@
+{
+  "header": {
+    "nav": [
+      { "label": "home", "url": "../" },
+      { "label": "home", "url": "../" },
+      { "label": "home", "url": "../" },
+      { "label": "home", "url": "../" }
+    ]
+  },
+  "hero": {
+    "title": "つまずきを、武器にする。",
+    "subtitle": "HTML. CSS. Javajscfipt などに、",
+    "buttontext": "卒煙初心し詰る",
+    "buttonlink": "#",
+    "imageUrl": "/assets/hero.png"
+  },
+  "categories": [
+    {
+      "label": "HTML",
+      "description": "HTMLの沼束をすぼう"
+    },
+    {
+      "label": "CSS",
+      "description": "CSSの悲束を学ぼうう"
+    },
+    {
+      "label": "JS",
+      "description": "JavaScript の沼束すむう"
+    },
+    {
+      "label": "PHP",
+      "description": "PHP の悲束を学ぼうう"
+    }
+  ],
+  "articles": [
+    {
+      "title": "「map」って何？\n根ぃ答にわかりやすく卿読",
+      "date": "2024年4月10日",
+      "link": "#"
+    },
+    {
+      "title": "PHPでシンプルな\nフォームを作成する方法",
+      "date": "2024年4月10日",
+      "link": "#"
+    }
+  ],
+  "about": {
+    "title": "自己紹介 / このサイトについて",
+    "content": "フリーランスのウェブエンジニア。\n独学でつまずいた躓題をもとに、「わかる」ための学習コンテンツを発信しています。"
+  }
+}
