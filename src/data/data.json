@@ -9,8 +9,8 @@
   },
   "hero": {
     "title": "つまずきを、武器にする。",
-    "subtitle": "HTML. CSS. Javajscfipt などに、",
-    "buttontext": "卒煙初心し詰る",
+    "subtitle": "HTML. CSS. Javajscfipt php",
+    "buttontext": "学習してみる",
     "buttonlink": "#",
     "imageUrl": "/assets/hero.png"
   },
@@ -41,6 +41,6 @@
   "about": {
     "title": "自己紹介 / このサイトについて",
     "imageUrl": "/assets/profile.png",
-    "content": "フリーランスのウェブエンジニア。\n独学でつまずいた躓題をもとに、「わかる」ための学習コンテンツを発信しています。"
+    "content": "フリーランスのWebエンジニア。独学で何度もつまずいた経験をもとに、初心者にも“ちゃんとわかる”学習コンテンツを発信しています。"
   }
 }
