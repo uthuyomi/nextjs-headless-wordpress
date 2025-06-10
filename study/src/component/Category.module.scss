@@ -1,0 +1,33 @@
+.category {
+	.title {
+        width: 100%;
+        font-size: 3em;
+        font-weight: bold;
+        padding: 30px 0;
+	}
+	.categoryContent {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+
+		.categoryContentItem {
+            width: 275px;
+            height: 300px;
+            background-color: #171d21;
+            padding-top: 30px;
+            border-radius: 20px;
+			h3 {
+                width: 100%;
+                text-align: center;
+                font-size: 4em;
+                font-weight: bold;
+			}
+			p {
+                text-align: center;
+                font-size: 2em;
+                padding: 20px 30px;
+			}
+		}
+	}
+}

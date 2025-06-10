@@ -1,24 +1,24 @@
-import style from "./Category.module.scss";
+import style from "@/component/Category.module.scss";
 import Link from "next/link";
 
-type data = {
+type CategoryItem = {
+  label: string;
+  description: string;
+};
+type props = {
   categories: {
     title: string;
-    category: {
-      label: string;
-      description: string;
-    }[];
+    category: CategoryItem[];
   };
 };
 
-const Category = ({ data }: data) => {
-  const categoryData = data;
+const Category = ({ categories }: props) => {
   return (
     <div className={style.category}>
-      <h2>{categories.title}</h2>
-      <div>
-        {categoryData.map((item, i) => (
-          <div key={i} className={style.categoryItem}>
+      <h2 className={style.title}>{categories.title}</h2>
+      <div className={style.categoryContent}>
+        {categories.category.map((item, i) => (
+          <div key={i} className={style.categoryContentItem}>
             <h3>{item.label}</h3>
             <p>{item.description}</p>
           </div>

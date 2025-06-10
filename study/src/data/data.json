@@ -15,7 +15,7 @@
     "imageUrl": "/assets/hero.png"
   },
   "categories": {
-      "title": "学習カテゴリ",
+    "title": "学習カテゴリ",
     "category": [
       {
         "label": "HTML",
@@ -35,20 +35,12 @@
       }
     ]
   },
-  "articles": [
-    {
-      "title": "「map」って何？\n根ぃ答にわかりやすく卿読",
-      "date": "2024年4月10日",
-      "link": "#"
-    },
-    {
-      "title": "PHPでシンプルな\nフォームを作成する方法",
-      "date": "2024年4月10日",
-      "link": "#"
-    }
-  ],
+  "articles": {
+    "title": "新着記事"
+  },
   "about": {
     "title": "自己紹介 / このサイトについて",
+    "imageUrl": "/assets/profile.png",
     "content": "フリーランスのウェブエンジニア。\n独学でつまずいた躓題をもとに、「わかる」ための学習コンテンツを発信しています。"
   }
 }
