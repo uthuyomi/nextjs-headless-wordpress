@@ -1,10 +1,9 @@
 {
+  "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts",
   "header": {
     "nav": [
-      { "label": "home", "url": "../" },
-      { "label": "home", "url": "../" },
-      { "label": "home", "url": "../" },
-      { "label": "home", "url": "../" }
+      { "label": "home", "url": "/" },
+      { "label": "archive", "url": "/archive" }
     ]
   },
   "hero": {

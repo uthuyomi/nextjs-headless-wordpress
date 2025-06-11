@@ -4,9 +4,11 @@ import Category from "@/component/Category";
 import News from "@/component/News";
 import Data from "@/data/data.json";
 import Profile from "@/component/Profile";
+import localhost from '@/data/data.json';
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost/wordpress/wp-json/wp/v2/posts");
+  const url = localhost.wpurl;
+  const res = await fetch(url);
   const posts = await res.json();
   return {
     props: {

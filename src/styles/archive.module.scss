@@ -1,0 +1,30 @@
+.archive {
+    width: 100%;
+    padding-top: 120px;
+    .heading{
+        
+        width: 100%;
+        font-size: 3em;
+        text-align: center;
+    }
+    .blogContent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        width: 100%;
+        margin-top: 3em;
+		.blogContentItem {
+            width: 450px;
+            height: 550px;
+            background-color: #ffffff;
+            padding: 3em;
+            color: #000000;
+			h2 {
+			}
+			p {
+			}
+		}
+	}
+}
