@@ -1,5 +1,5 @@
 {
-  "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts",
+  "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts?_embed",
   "header": {
     "nav": [
       { "label": "home", "url": "/" },
