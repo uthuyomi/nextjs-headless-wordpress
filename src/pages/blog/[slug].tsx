@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import style from "@/styles/blogItem.module.scss"
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
@@ -28,13 +29,17 @@ export default function BlogPost({
 
       <Header />
 
-      <article>
-        <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-        
-        <p>{new Date(post.date).toLocaleDateString()}</p>
-        <p>著者: {author.name}</p>
-        <p>カテゴリ: {categoryNames.join(", ")}</p>
-        <p>タグ: {tagNames.join(", ")}</p>
+      <article className={style.blogItem}>
+        <h1
+          className={style.heading}
+          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+        />
+        <div class={style.headingItem}>
+          <p>{new Date(post.date).toLocaleDateString()}</p>
+          <p>著者: {author.name}</p>
+          <p>カテゴリ: {categoryNames.join(", ")}</p>
+          <p>タグ: {tagNames.join(", ")}</p>
+        </div>
 
         {featuredImage && (
           <Image

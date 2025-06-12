@@ -1,4 +1,20 @@
-.article{
-    .heading{}
-    
+.blogItem{
+    padding-top: 120px;
+    width: 100%;
+    .heading{
+        width: 100%;
+        text-align: center;
+        font-size: 4em;
+    }
+    .headingItem{
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        padding: 30px 0 20px;
+    }
+    img{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
 }
