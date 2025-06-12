@@ -3,7 +3,8 @@
   "header": {
     "nav": [
       { "label": "home", "url": "/" },
-      { "label": "archive", "url": "/archive" }
+      { "label": "archive", "url": "/archive" },
+      { "label": "profile", "url": "/profile" }
     ]
   },
   "hero": {

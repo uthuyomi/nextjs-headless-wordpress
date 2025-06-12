@@ -4,6 +4,7 @@ import style from "@/styles/blogItem.module.scss"
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
+import Link from "next/link";
 
 export default function BlogPost({
   post,
@@ -11,6 +12,8 @@ export default function BlogPost({
   categoryNames,
   tagNames,
   featuredImage,
+  prevPost,
+  nextPost,
 }: any) {
   const router = useRouter();
   if (router.isFallback) return <p>Loading...</p>;
@@ -34,7 +37,7 @@ export default function BlogPost({
           className={style.heading}
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
         />
-        <div class={style.headingItem}>
+        <div className={style.headingItem}>
           <p>{new Date(post.date).toLocaleDateString()}</p>
           <p>著者: {author.name}</p>
           <p>カテゴリ: {categoryNames.join(", ")}</p>
@@ -50,7 +53,24 @@ export default function BlogPost({
           />
         )}
 
-        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+        <div
+          className={style.blogPostContent}
+          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+        />
+
+        <div className={style.pageNaition}>
+          {prevPost && (
+            <Link href={`/blog/${prevPost.slug}`}>
+              ＜＜  前の記事：
+            </Link>
+          )}
+
+          {nextPost && (
+            <Link href={`/blog/${nextPost.slug}`}>
+              次の記事  ＞＞
+            </Link>
+          )}
+        </div>
       </article>
     </>
   );
@@ -114,6 +134,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     featuredImage = img.source_url;
   }
 
+  const currentId = post.id; //投稿順
+  const mainCategory = post.categories?.[0]; //カテゴリ別
+
+  // カテゴリ内の投稿を全件（100件まで）取得
+  const allRes = await fetch(
+    `http://localhost/wordpress/wp-json/wp/v2/posts?categories=${mainCategory}&orderby=id&order=asc&per_page=100`
+  );
+  const allPosts = await allRes.json();
+
+  // 現在の投稿の位置を探す
+  const index = allPosts.findIndex((p) => p.id === currentId);
+  const prevPost = allPosts[index - 1] || null;
+  const nextPost = allPosts[index + 1] || null;
+
   return {
     props: {
       post,
@@ -121,6 +155,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       categoryNames,
       tagNames,
       featuredImage,
+      prevPost,
+      nextPost,
     },
     revalidate: 10,
   };

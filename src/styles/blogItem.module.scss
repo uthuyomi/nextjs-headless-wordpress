@@ -2,7 +2,7 @@
     padding-top: 120px;
     width: 100%;
     .heading{
-        width: 100%;
+        width: 1000px;
         text-align: center;
         font-size: 4em;
     }
@@ -16,5 +16,153 @@
         display: block;
         width: 100%;
         object-fit: cover;
+    }
+    .blogPostContent {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        background-color: #fff;
+        color: #1a1a1a;
+        font-size: 1.06rem;
+        line-height: 1.9;
+        font-family: 'Noto Sans JP', sans-serif;
+      
+        // ==============================
+        // 見出し系
+        // ==============================
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 700;
+          color: #111;
+          margin: 2.5rem 0 1rem;
+          line-height: 1.5;
+        }
+      
+        h1 { font-size: 2rem; border-bottom: 2px solid #ddd; padding-bottom: 0.3em; }
+        h2 { font-size: 1.7rem; border-left: 4px solid #0070f3; padding-left: 0.6em; }
+        h3 { font-size: 1.4rem; color: #0056c1; }
+        h4 { font-size: 1.2rem; }
+        h5 { font-size: 1rem; }
+        h6 { font-size: 0.9rem; }
+      
+        // ==============================
+        // 段落・装飾
+        // ==============================
+        p {
+          margin: 1.2rem 0;
+        }
+      
+        a {
+          color: #0070f3;
+          text-decoration: underline;
+          transition: 0.2s ease;
+      
+          &:hover {
+            color: #0056c1;
+          }
+        }
+      
+        strong {
+          font-weight: bold;
+          color: #000;
+        }
+      
+        em {
+          font-style: italic;
+          color: #444;
+        }
+      
+        // ==============================
+        // リスト系
+        // ==============================
+        ul, ol {
+          margin: 1.5rem 0 1.5rem 1.5rem;
+          padding-left: 1rem;
+        }
+      
+        li {
+          margin: 0.5rem 0;
+          line-height: 1.8;
+        }
+      
+        // ==============================
+        // コード・プリ
+        // ==============================
+        pre {
+          background-color: #f6f8fa;
+          padding: 1rem;
+          border-radius: 8px;
+          overflow-x: auto;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 0.95rem;
+        }
+      
+        code {
+          background-color: #f1f1f1;
+          padding: 0.2rem 0.4rem;
+          border-radius: 4px;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 0.95rem;
+        }
+      
+        // ==============================
+        // 引用
+        // ==============================
+        blockquote {
+          margin: 2rem 0;
+          padding: 1rem 1.5rem;
+          border-left: 4px solid #ccc;
+          background-color: #fafafa;
+          color: #444;
+          font-style: italic;
+        }
+      
+        // ==============================
+        // 画像
+        // ==============================
+        img {
+          max-width: 100%;
+          height: auto;
+          margin: 2rem auto;
+          display: block;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+      
+        // ==============================
+        // その他
+        // ==============================
+        hr {
+          border: none;
+          border-top: 1px solid #e0e0e0;
+          margin: 2.5rem 0;
+        }
+      
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 2rem 0;
+          font-size: 0.95rem;
+      
+          th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+          }
+      
+          th {
+            background-color: #f9f9f9;
+          }
+        }
+    }
+    .pageNaition{
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        padding: 50px 0;
+        a{
+            display: block;
+            padding: 15px 30px;
+            border: solid 1px #ffffff;
+        }
     }
 }
