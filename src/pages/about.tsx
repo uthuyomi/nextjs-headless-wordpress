@@ -7,10 +7,7 @@ const About = () => {
     <>
       <Header />
       <main className={style.profileMain}>
-        <section className={style.heroSection}>
-          <h1 className={style.pageTitle}>私について</h1>
-          <p className={style.pageIntro}>Web制作 × 文章制作 × AI活用</p>
-        </section>
+        
 
         <section className={style.introductionSection}>
           <h2 className={style.sectionTitle}>自己紹介</h2>

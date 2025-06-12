@@ -10,16 +10,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 type NewsProps = {
-  news: any[];
-  newsData: {
+  newsPost: any[];
+  news: {
     title: string;
+    noimg: string;
+    linkLabel: string;
   };
 };
 
-const News = ({ newsData, news }: NewsProps) => {
+const News = ({ news, newsPost }: NewsProps) => {
   return (
     <div className={style.article}>
-      <h2>{newsData.title}</h2>
+      <h2>{news.title}</h2>
 
       <Swiper
         modules={[Navigation, Pagination]}
@@ -33,12 +35,12 @@ const News = ({ newsData, news }: NewsProps) => {
           1024: { slidesPerView: 3 },
         }}
       >
-        {news.map((item) => (
+        {newsPost.map((item) => (
           <SwiperSlide key={item.id}>
             <div className={style.articleContentItem}>
               <div className={style.articleImage}>
                 <Image
-                  src={item.jetpack_featured_media_url}
+                  src={item.jetpack_featured_media_url || news.noimg }
                   alt={item.title.rendered}
                   width={300}
                   height={200}
@@ -47,7 +49,7 @@ const News = ({ newsData, news }: NewsProps) => {
               <div className={style.articleText}>
                 <h3 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
                 <p>{new Date(item.date).toLocaleDateString()}</p>
-                <Link href={`/blog/${item.slug}`}>続きを読む</Link>
+                <Link href={`/blog/${item.slug}`}>{news.linkLabel}</Link>
               </div>
             </div>
           </SwiperSlide>

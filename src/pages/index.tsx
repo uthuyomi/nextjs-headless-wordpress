@@ -7,7 +7,7 @@ import Profile from "@/component/Profile";
 import localhost from '@/data/data.json';
 
 export async function getStaticProps() {
-  const url = localhost.wpurl;
+  const url = localhost.top.wpurl;
   const res = await fetch(url);
   const posts = await res.json();
   return {
@@ -20,11 +20,11 @@ export async function getStaticProps() {
 export default function index({ posts }) {
   return (
     <>
-      <Header />
-      <Hero data={Data.hero} />
-      <Category categories={Data.categories} />
-      <News newsData={Data.articles} news={posts} />
-      <Profile about={Data.about} />
+      <Header nav={Data.top.header.nav} />
+      <Hero hero={Data.top.hero} />
+      <Category category={Data.top.categories} />
+      <News news={Data.top.news} newsPost={posts} />
+      <Profile about={Data.top.profile} />
     </>
   );
 }

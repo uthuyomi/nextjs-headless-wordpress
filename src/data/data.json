@@ -1,46 +1,35 @@
 {
-  "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts?_embed",
-  "header": {
-    "nav": [
-      { "label": "home", "url": "/" },
-      { "label": "archive", "url": "/archive" },
-      { "label": "profile", "url": "/profile" }
-    ]
+  "top":{
+    "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts?_embed",
+    "header": {
+      "nav": [
+        { "label": "home", "url": "/" },
+        { "label": "archive", "url": "/archive" },
+        { "label": "profile", "url": "/profile" }
+      ]
+    },
+    "hero": {
+      "title": "つまずきを、武器にする。",
+      "subtitle": "HTML. CSS. Javajscfipt php",
+      "buttontext": "学習してみる",
+      "buttonlink": "http://localhost/wordpress/archive",
+      "imageUrl": "/assets/hero.png"
+    },
+    "categories": {
+      "title": "学習カテゴリ"
+    },
+    "news": {
+      "title": "新着記事",
+      "noimg": "/assets/noimg.png",
+      "linkLabel": "続きを読む"
+    },
+    "profile": {
+      "title": "自己紹介 / このサイトについて",
+      "imageUrl": "/assets/profile.png",
+      "content": "フリーランスのWebエンジニア。独学で何度もつまずいた経験をもとに、初心者にも“ちゃんとわかる”学習コンテンツを発信しています。"
+    }
   },
-  "hero": {
-    "title": "つまずきを、武器にする。",
-    "subtitle": "HTML. CSS. Javajscfipt php",
-    "buttontext": "学習してみる",
-    "buttonlink": "http://localhost/wordpress/archive",
-    "imageUrl": "/assets/hero.png"
-  },
-  "categories": {
-    "title": "学習カテゴリ",
-    "category": [
-      {
-        "label": "HTML",
-        "description": "HTMLの沼束をすぼう"
-      },
-      {
-        "label": "CSS",
-        "description": "CSSの悲束を学ぼうう"
-      },
-      {
-        "label": "JS",
-        "description": "JavaScript の沼束すむう"
-      },
-      {
-        "label": "PHP",
-        "description": "PHP の悲束を学ぼうう"
-      }
-    ]
-  },
-  "articles": {
-    "title": "新着記事"
-  },
-  "about": {
-    "title": "自己紹介 / このサイトについて",
-    "imageUrl": "/assets/profile.png",
-    "content": "フリーランスのWebエンジニア。独学で何度もつまずいた経験をもとに、初心者にも“ちゃんとわかる”学習コンテンツを発信しています。"
+  "about":{
+  
   }
 }

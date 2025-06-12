@@ -15,7 +15,13 @@ type WP_Category = {
   slug: string;
 };
 
-const Category = () => {
+type categoryProps = {
+  category: {
+    title: string;
+  }
+}
+
+const Category = ({ category }:categoryProps) => {
   const [categories, setCategories] = useState<WP_Category[]>([]);
 
   useEffect(() => {
@@ -27,7 +33,7 @@ const Category = () => {
 
   return (
     <div className={style.category}>
-      <h2 className={style.title}>学習カテゴリー</h2>
+      <h2 className={style.title}>{category.title}</h2>
 
       <Swiper
         modules={[Navigation, Pagination]}

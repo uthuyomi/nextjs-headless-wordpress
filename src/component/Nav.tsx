@@ -1,12 +1,10 @@
 import React from "react";
-import siteData from "../data/data.json";
 
-const Nav = () => {
-  const navData = siteData.header.nav;
+const Nav = ({ nav }) => {
   return (
     <nav className="headNav">
       <ul>
-        {navData.map((item, i) => (
+        {nav.map((item, i) => (
           <li key={i}>
             <a href={item.url}>{item.label}</a>
           </li>
