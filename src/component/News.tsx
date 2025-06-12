@@ -47,7 +47,7 @@ const News = ({ newsData, news }: NewsProps) => {
               <div className={style.articleText}>
                 <h3 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
                 <p>{new Date(item.date).toLocaleDateString()}</p>
-                <Link href={item.link}>続きを読む</Link>
+                <Link href={`/blog/${item.slug}`}>続きを読む</Link>
               </div>
             </div>
           </SwiperSlide>
