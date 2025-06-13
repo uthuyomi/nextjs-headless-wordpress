@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "@/component/Header";
 import style from "@/styles/about.module.scss";
+import Data from '@/data/data.json';
 
 const About = () => {
   return (
     <>
-      <Header />
+      <Header nav={Data.top.header.nav} />
       <main className={style.profileMain}>
         
 

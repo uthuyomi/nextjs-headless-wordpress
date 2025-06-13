@@ -1,6 +1,8 @@
 .hero {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
   padding-top: 150px;
   .heroText {

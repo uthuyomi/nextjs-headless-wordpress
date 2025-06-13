@@ -1,4 +1,5 @@
 import React from 'react'
+import style from '@/styles/about.module.scss'
 
 const aboutHero = () => {
   return (

@@ -52,7 +52,7 @@ const Category = ({ category }:categoryProps) => {
           <SwiperSlide key={item.id}>
             <div className={style.categoryContentItem}>
               <h3>
-                <Link href={`/category/${item.slug}`}>{item.name}</Link>
+                <Link href={`/archive?${item.slug}`}>{item.name}</Link>
               </h3>
               <p>{item.description || "説明文なし"}</p>
             </div>
