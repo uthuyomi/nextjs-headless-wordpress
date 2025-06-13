@@ -21,7 +21,7 @@ const archiveItem = ({ posts, noimg }: {posts: any[], noimg: string}) => {
                 className={style.thumbnail}
               />
             </div>
-            <Link href={`/blog/${post.id}`}>
+            <Link href={`/blog/${post.slug}`}>
               <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             </Link>
             <p>{new Date(post.date).toLocaleDateString()}</p>

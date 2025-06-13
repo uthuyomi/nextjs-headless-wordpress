@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
 import Link from "next/link";
+import Data from "@/data/data.json"
 
 export default function BlogPost({
   post,
@@ -30,7 +31,7 @@ export default function BlogPost({
         {featuredImage && <meta property="og:image" content={featuredImage} />}
       </Head>
 
-      <Header />
+      <Header nav={Data.top.header.nav}/>
 
       <article className={style.blogItem}>
         <h1

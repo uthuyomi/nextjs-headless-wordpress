@@ -6,7 +6,10 @@ import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import localhost from "@/data/data.json";
 import Data from "@/data/data.json";
+import { useEffect, useState } from "react";
 
+
+// ビルド時に全記事を取得して静的生成
 export const getStaticProps: GetStaticProps = async () => {
   const url = localhost.top.wpurl;
   const res = await fetch(url);
@@ -14,23 +17,41 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { posts } }; // ← props 小文字でOK
 };
 
-const Archive = ({ posts }: { posts: any[] }) => { 
+const Archive = ({ posts }: { posts: any[] }) => {
   const navData = Data.top.header.nav;
   const router = useRouter();
   const { category } = router.query;
+  
+  
+  // 動的に取得したカテゴリ名を格納
+  const [categoryName, setCategoryName] = useState<string | null>(null);
+  useEffect(() => {
+    // categoryが未定義 or 配列（エラーケース）の場合は無視
+    if (category) {
+      fetch(`http://localhost/wordpress/wp-json/wp/v2/categories/${category}`)
+        .then((res) => res.json())
+        .then((data) => setCategoryName(data.name))
+        .catch((err) => {
+          console.error("カテゴリ名の取得に失敗:", err);
+          setCategoryName(null);
+        });
+    } else {
+      setCategoryName(null);
+    }
+  }, [category]);
 
   //フィルター処理：カテゴリIDが一致する記事だけを抽出
   const filterPosts = category
-    ? posts.filter((post) =>
-      post.categories.includes(Number(category))
-    )
+    ? posts.filter((post) => post.categories.includes(Number(category)))
     : posts;
 
   return (
     <>
       <Header nav={navData} />
       <section className={style.archive}>
-        <h2 className={style.heading}>{ category ? Data.archive.categoryLabel : Data.archive.blogLabel}</h2>
+        <h2 className={style.heading}>
+          {category ? `${categoryName} 一覧` : Data.archive.blogLabel}
+        </h2>
         <ArchiveItem posts={filterPosts} noimg={Data.archive.noimg} />
       </section>
     </>
