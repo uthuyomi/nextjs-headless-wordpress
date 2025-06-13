@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import style from "@/styles/blogItem.module.scss"
+import style from "@/styles/blog.module.scss"
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";

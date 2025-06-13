@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/component/Header";
-import ArchiveItem from "@/component/ArchiveItem";
+import ArchiveItem from "@/pages/archive/ArchiveItem";
 import style from "@/styles/archive.module.scss";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
