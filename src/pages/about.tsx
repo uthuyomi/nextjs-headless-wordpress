@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "@/component/Header";
 import style from "@/styles/about.module.scss";
+import AboutHero from "@/pages/about/aboutHero";
+import AboutDescription from "./about/AboutDescription";
 import Data from '@/data/data.json';
 
 const About = () => {
@@ -8,21 +10,8 @@ const About = () => {
     <>
       <Header nav={Data.top.header.nav} />
       <main className={style.profileMain}>
-        
-
-        <section className={style.introductionSection}>
-          <h2 className={style.sectionTitle}>自己紹介</h2>
-          <p className={style.description}>
-            北海道札幌市を拠点に活動している、Webコーダー／ライターの安崎海星（Yasuzaki
-            Kaisei）です。
-            フロントエンドの実装から、WordPressテーマの開発、小説・技術記事の執筆まで──
-            「構造」と「言語」を軸に、多領域での表現と設計を行っています。
-          </p>
-          <p className={style.description}>
-            単なる実装ではなく、クライアントの意図や読者の理解までを視野に入れた「設計としてのコーディング」「構造としてのライティング」を重視。
-            自身の制作物には、意味のある余白と、静かな文脈を宿すよう心がけています。
-          </p>
-        </section>
+        <AboutHero about={Data.about.hero} />
+        <AboutDescription description={Data.about.description} />
 
         <section className={style.skillSection}>
           <h2 className={style.sectionTitle}>スキルセット</h2>

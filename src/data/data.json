@@ -1,5 +1,5 @@
 {
-  "top":{
+  "top": {
     "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts?_embed",
     "header": {
       "nav": [
@@ -29,12 +29,32 @@
       "content": "フリーランスのWebエンジニア。独学で何度もつまずいた経験をもとに、初心者にも“ちゃんとわかる”学習コンテンツを発信しています。"
     }
   },
-  "about":{
-  
+  "about": {
+    "hero": {
+      "title": "私について",
+      "intro": "Web制作 × 文章制作 × AI活用"
+    },
+    "description": {
+      "title": "自己紹介",
+      "descriptionText01": "北海道札幌市を拠点に活動している、Webコーダー／ライターの安崎海星（YasuzakiKaisei）です。<br>フロントエンドの実装から、WordPressテーマの開発、小説・技術記事の執筆まで──「構造」と「言語」を軸に、多領域での表現と設計を行っています。",
+      "descriptionText02": "単なる実装ではなく、クライアントの意図や読者の理解までを視野に入れた「設計としてのコーディング」「構造としてのライティング」を重視。<br>自身の制作物には、意味のある余白と、静かな文脈を宿すよう心がけています。"
+    },
+    "skill": {
+      "title": "スキルセット",
+      "skillSet": [
+        "HTML / CSS / SCSS（レスポンシブ / カラム設計）",
+        "JavaScript / React / Next.js（SPA / API連携）",
+        "PHP / WordPressテーマ開発（自作 / カスタム投稿 / フィールド）",
+        "Figma / XD / Photoshop（デザインカンプからの実装）",
+        "SEO設計 / ページ構造の最適化",
+        "執筆（小説 / 技術記事 / 構造ライティング）",
+        "AI活用（ChatGPTとの共同制作 / コンテンツ設計支援）"
+      ]
+    }
   },
-  "archive":{
+  "archive": {
     "categoryLabel": "カテゴリ別記事一覧",
-    "blogLabel": "ブログ一覧" ,
+    "blogLabel": "ブログ一覧",
     "noimg": "/assets/noimg.png"
   }
 }
