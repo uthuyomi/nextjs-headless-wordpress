@@ -1,10 +1,11 @@
 import React from "react";
 import style from "@/styles/about.module.scss";
+import Link from "next/link";
 
 type ItemProps = {
   linkLabel: string;
   linkUrl: string;
-}
+};
 
 type LinkProp = {
   link: {
@@ -18,14 +19,10 @@ const AboutLink = ({ link }: LinkProp) => {
     <section className={style.siteLinkSection}>
       <h2 className={style.sectionTitle}>{link.title}</h2>
       <ul className={style.siteList}>
-        {link.map((item, i) => (
+        {link.linkItem.map((item, i) => (
           <li key={i}>
-            <strong>{item.link.linkLabel[i]}</strong>
-            <a
-              href={item.link.linkUrl[i]}
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
+            <strong>{item.linkLabel}</strong>
+            <Link href={item.linkUrl}>{item.linkUrl}</Link>
           </li>
         ))}
       </ul>
