@@ -4,6 +4,7 @@ import style from "@/styles/about.module.scss";
 import AboutHero from "@/pages/about/aboutHero";
 import AboutDescription from "./about/AboutDescription";
 import AboutSkill from "./about/AboutSkill";
+import AboutLink from "./about/AboutLink";
 import Data from '@/data/data.json';
 
 const About = () => {
@@ -14,6 +15,7 @@ const About = () => {
         <AboutHero about={Data.about.hero} />
         <AboutDescription description={Data.about.description} />
         <AboutSkill skill={Data.about.skill} />
+        <AboutLink link={Data.about.link} />
 
         
 

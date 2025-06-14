@@ -1,23 +1,36 @@
-import React from 'react'
+import React from "react";
+import style from "@/styles/about.module.scss";
 
-const AboutLink = () => {
-  return (
-    <section className={style.siteLinkSection}>
-  <h2 className={style.sectionTitle}></h2>
-  <ul className={style.siteList}>
-    <li>
-      <strong></strong>
-      <a
-        href=
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        『現読：記録者ノート』シリーズ（note）
-      </a>
-    </li>
-  </ul>
-</section>
-  )
+type ItemProps = {
+  linkLabel: string;
+  linkUrl: string;
 }
 
-export default AboutLink
+type LinkProp = {
+  link: {
+    title: string;
+    linkItem: ItemProps[];
+  };
+};
+
+const AboutLink = ({ link }: LinkProp) => {
+  return (
+    <section className={style.siteLinkSection}>
+      <h2 className={style.sectionTitle}>{link.title}</h2>
+      <ul className={style.siteList}>
+        {link.map((item, i) => (
+          <li key={i}>
+            <strong>{item.link.linkLabel[i]}</strong>
+            <a
+              href={item.link.linkUrl[i]}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+export default AboutLink;
