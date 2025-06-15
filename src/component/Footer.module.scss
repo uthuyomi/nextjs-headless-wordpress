@@ -1,0 +1,16 @@
+.footer {
+  .copyright {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+
+    .name {
+      font-weight: bold;
+    }
+
+    .alias {
+      font-style: italic;
+      opacity: 0.7;
+    }
+  }
+}

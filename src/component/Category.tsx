@@ -18,6 +18,7 @@ type WP_Category = {
 type categoryProps = {
   category: {
     title: string;
+    noDescription: string;
   }
 }
 
@@ -54,7 +55,7 @@ const Category = ({ category }:categoryProps) => {
               <h3>
                 <Link href={`/archive?category=${item.id}`}>{item.name}</Link>
               </h3>
-              <p>{item.description || "説明文なし"}</p>
+              <p>{item.description || category.noDescription}</p>
             </div>
           </SwiperSlide>
         ))}

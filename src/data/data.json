@@ -16,7 +16,8 @@
       "imageUrl": "/assets/hero.png"
     },
     "categories": {
-      "title": "学習カテゴリ"
+      "title": "学習カテゴリ",
+      "noDescription": "説明文なし"
     },
     "news": {
       "title": "新着記事",
@@ -27,6 +28,11 @@
       "title": "自己紹介 / このサイトについて",
       "imageUrl": "/assets/profile.png",
       "content": "フリーランスのWebエンジニア。独学で何度もつまずいた経験をもとに、初心者にも“ちゃんとわかる”学習コンテンツを発信しています。"
+    },
+    "footer": {
+      "copyData" : "@ 2025",
+      "copyName" : "Kaisei Yasuzaki",
+      "copyPenName" : "uthuyomi"
     }
   },
   "about": {
@@ -69,11 +75,11 @@
       ]
     },
     "contact": {
-      "title" : "お問い合わせ",
+      "title": "お問い合わせ",
       "text01": "Web制作のご依頼、文章案件、構造設計に関するご相談など、お気軽にご連絡ください。内容を確認の上、通常1〜2営業日以内にお返事いたします。",
       "text02": "内容を確認の上、通常1〜2営業日以内にお返事いたします。",
       "linkLabel": "お問い合わせフォームへ",
-      "linkUrl" : "https://webyayasu.com/#contact"
+      "linkUrl": "https://webyayasu.com/#contact"
     }
   },
   "archive": {

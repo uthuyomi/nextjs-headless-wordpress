@@ -4,7 +4,8 @@ import Category from "@/component/Category";
 import News from "@/component/News";
 import Data from "@/data/data.json";
 import Profile from "@/component/Profile";
-import localhost from '@/data/data.json';
+import Footer from "@/component/Footer";
+import localhost from "@/data/data.json";
 
 export async function getStaticProps() {
   const url = localhost.top.wpurl;
@@ -25,6 +26,7 @@ export default function index({ posts }) {
       <Category category={Data.top.categories} />
       <News news={Data.top.news} newsPost={posts} />
       <Profile about={Data.top.profile} />
+      <Footer footer={Data.top.footer} />
     </>
   );
 }
