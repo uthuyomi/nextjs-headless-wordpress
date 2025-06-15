@@ -1,10 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
   images: {
-    domains: ["localhost"], // ← これを追加！！
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "", // ← LocalWPなどでポート指定ない場合は空でOK
+        pathname: "/**",
+      },
+    ],
   },
 };
 

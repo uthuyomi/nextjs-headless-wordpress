@@ -1,13 +1,9 @@
 import React from 'react'
 import style from "@/styles/about.module.scss"
-type SkillSet = {
-    skillSet: string[];
-}
-
 type SkillProps = {
     skill: {
         title: string;
-        skillSet: SkillSet;
+        skillSet: string[];
     }
 }
 
