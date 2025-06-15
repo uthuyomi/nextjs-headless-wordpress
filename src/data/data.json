@@ -1,6 +1,6 @@
 {
   "top": {
-    "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts?_embed",
+    "wpurl": "http://wordpress.local/wp-json/wp/v2/posts?_embed",
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
@@ -12,7 +12,7 @@
       "title": "つまずきを、武器にする。",
       "subtitle": "HTML. CSS. Javajscfipt php",
       "buttontext": "学習してみる",
-      "buttonlink": "http://localhost/wordpress/archive",
+      "buttonlink": "http://wordpress.local/archive",
       "imageUrl": "/assets/hero.png"
     },
     "categories": {
@@ -67,6 +67,12 @@
           "linkUrl": "https://twitter.com/uthuyomi"
         }
       ]
+    },
+    "contact": {
+      "title" : "お問い合わせ",
+      "text": "Web制作のご依頼、文章案件、構造設計に関するご相談など、お気軽にご連絡ください。内容を確認の上、通常1〜2営業日以内にお返事いたします。",
+      "linkLabel": "",
+      "linkUrl" : ""
     }
   },
   "archive": {
