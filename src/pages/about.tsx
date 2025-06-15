@@ -6,7 +6,7 @@ import AboutDescription from "./about/AboutDescription";
 import AboutSkill from "./about/AboutSkill";
 import AboutLink from "./about/AboutLink";
 import AboutContact from "./about/AboutContact";
-import Data from '@/data/data.json';
+import Data from "@/data/data.json";
 
 const About = () => {
   return (
@@ -17,7 +17,7 @@ const About = () => {
         <AboutDescription description={Data.about.description} />
         <AboutSkill skill={Data.about.skill} />
         <AboutLink link={Data.about.link} />
-        <AboutContact contact={ Data.about.contact} />
+        <AboutContact contact={Data.about.contact} />
       </main>
     </>
   );

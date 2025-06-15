@@ -1,19 +1,19 @@
 import style from "@/component/Header.module.scss";
-import Nav from "./Nav"
+import Nav from "./Nav";
 
-type dataProps = { 
+export type DataProps = {
   nav: {
     label: string;
     url: string;
   }[];
-}
+};
 
-const Header = ({ nav }: dataProps) => {
+const Header = ({ nav }: DataProps) => {
   return (
     <header className={style.header}>
       <Nav nav={nav} />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

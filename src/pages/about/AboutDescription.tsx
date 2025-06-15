@@ -1,5 +1,5 @@
-import React from 'react'
-import style from '@/styles/about.module.scss';
+import React from "react";
+import style from "@/styles/about.module.scss";
 
 type descriptionProps = {
   description: {
@@ -9,7 +9,7 @@ type descriptionProps = {
   };
 };
 
-const AboutDescription = ({ description}: descriptionProps ) => {
+const AboutDescription = ({ description }: descriptionProps) => {
   return (
     <section className={style.introductionSection}>
       <h2 className={style.sectionTitle}>{description.title}</h2>
@@ -17,6 +17,6 @@ const AboutDescription = ({ description}: descriptionProps ) => {
       <p className={style.description}>{description.descriptionText02}</p>
     </section>
   );
-}
+};
 
-export default AboutDescription
+export default AboutDescription;

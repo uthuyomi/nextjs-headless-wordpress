@@ -1,6 +1,7 @@
 import React from "react";
+import { DataProps } from "./Header";
 
-const Nav = ({ nav }) => {
+const Nav = ({ nav }: DataProps) => {
   return (
     <nav className="headNav">
       <ul>

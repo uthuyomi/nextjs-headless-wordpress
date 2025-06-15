@@ -3,8 +3,7 @@ import style from "@/styles/archive.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 
-
-const archiveItem = ({ posts, noimg }: {posts: any[], noimg: string}) => {
+const archiveItem = ({ posts, noimg }: { posts: any[]; noimg: string }) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
@@ -14,7 +13,7 @@ const archiveItem = ({ posts, noimg }: {posts: any[], noimg: string}) => {
           <article className={style.blogContentItem} key={post.id}>
             <div className={style.img}>
               <Image
-                src={thumbnail||noimg}
+                src={thumbnail || noimg}
                 alt={post.title.rendered}
                 width={600}
                 height={340}

@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import style from "@/styles/blog.module.scss"
+import style from "@/styles/blog.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
 import Link from "next/link";
-import Data from "@/data/data.json"
+import Data from "@/data/data.json";
 
 export default function BlogPost({
   post,
@@ -31,7 +31,7 @@ export default function BlogPost({
         {featuredImage && <meta property="og:image" content={featuredImage} />}
       </Head>
 
-      <Header nav={Data.top.header.nav}/>
+      <Header nav={Data.top.header.nav} />
 
       <article className={style.blogItem}>
         <h1
@@ -61,15 +61,11 @@ export default function BlogPost({
 
         <div className={style.pageNaition}>
           {prevPost && (
-            <Link href={`/blog/${prevPost.slug}`}>
-              ＜＜  前の記事：
-            </Link>
+            <Link href={`/blog/${prevPost.slug}`}>＜＜ 前の記事：</Link>
           )}
 
           {nextPost && (
-            <Link href={`/blog/${nextPost.slug}`}>
-              次の記事  ＞＞
-            </Link>
+            <Link href={`/blog/${nextPost.slug}`}>次の記事 ＞＞</Link>
           )}
         </div>
       </article>

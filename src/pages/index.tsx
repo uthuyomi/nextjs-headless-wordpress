@@ -18,7 +18,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function index({ posts }) {
+export default function index({ posts }: { posts: any[] }) {
   return (
     <>
       <Header nav={Data.top.header.nav} />

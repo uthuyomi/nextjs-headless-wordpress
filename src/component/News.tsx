@@ -1,8 +1,6 @@
 import Link from "next/link";
 import style from "@/component/News.module.scss";
 import Image from "next/image";
-
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -40,7 +38,7 @@ const News = ({ news, newsPost }: NewsProps) => {
             <div className={style.articleContentItem}>
               <div className={style.articleImage}>
                 <Image
-                  src={item.jetpack_featured_media_url || news.noimg }
+                  src={item.jetpack_featured_media_url || news.noimg}
                   alt={item.title.rendered}
                   width={300}
                   height={200}

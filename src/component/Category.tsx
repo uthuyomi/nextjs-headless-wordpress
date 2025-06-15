@@ -19,10 +19,10 @@ type categoryProps = {
   category: {
     title: string;
     noDescription: string;
-  }
-}
+  };
+};
 
-const Category = ({ category }:categoryProps) => {
+const Category = ({ category }: categoryProps) => {
   const [categories, setCategories] = useState<WP_Category[]>([]);
 
   useEffect(() => {

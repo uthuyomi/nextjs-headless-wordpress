@@ -8,7 +8,6 @@ import localhost from "@/data/data.json";
 import Data from "@/data/data.json";
 import { useEffect, useState } from "react";
 
-
 // ビルド時に全記事を取得して静的生成
 export const getStaticProps: GetStaticProps = async () => {
   const url = localhost.top.wpurl;
@@ -21,8 +20,7 @@ const Archive = ({ posts }: { posts: any[] }) => {
   const navData = Data.top.header.nav;
   const router = useRouter();
   const { category } = router.query;
-  
-  
+
   // 動的に取得したカテゴリ名を格納
   const [categoryName, setCategoryName] = useState<string | null>(null);
   useEffect(() => {
