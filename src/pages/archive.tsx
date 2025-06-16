@@ -4,14 +4,13 @@ import ArchiveItem from "@/pages/archive/ArchiveItem";
 import style from "@/styles/archive.module.scss";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import localhost from "@/data/data.json";
 import Data from "@/data/data.json";
 import { useEffect, useState } from "react";
 import { Post } from '@/types/types';
 
 // ビルド時に全記事を取得して静的生成
 export const getStaticProps: GetStaticProps = async () => {
-  const url = localhost.top.wpurl;
+  const url = Data.top.wpurl;
   const res = await fetch(url);
   const posts = await res.json();
   return { props: { posts } }; // ← props 小文字でOK

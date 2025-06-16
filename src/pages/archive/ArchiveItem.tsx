@@ -2,8 +2,14 @@ import React from "react";
 import style from "@/styles/archive.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { Post } from "@/types/types";
 
-const archiveItem = ({ posts, noimg }: { posts: any[]; noimg: string }) => {
+type Props = {
+  posts: Post[];
+  noimg: string;
+};
+
+const archiveItem = ({ posts, noimg }: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
