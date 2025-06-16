@@ -4,8 +4,8 @@
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
-        { "label": "archive", "url": "/archive" },
-        { "label": "about", "url": "/about" }
+        { "label": "archive", "url": "/Archive" },
+        { "label": "about", "url": "/About" }
       ]
     },
     "hero": {
@@ -30,9 +30,9 @@
       "content": "フリーランスのWebエンジニア。独学で何度もつまずいた経験をもとに、初心者にも“ちゃんとわかる”学習コンテンツを発信しています。"
     },
     "footer": {
-      "copyData" : "@ 2025",
-      "copyName" : "Kaisei Yasuzaki",
-      "copyPenName" : "uthuyomi"
+      "copyData": "@ 2025",
+      "copyName": "Kaisei Yasuzaki",
+      "copyPenName": "uthuyomi"
     }
   },
   "about": {
