@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import localhost from "@/data/data.json";
 import Data from "@/data/data.json";
 import { useEffect, useState } from "react";
+import { Post } from '@/types/types';
 
 // ビルド時に全記事を取得して静的生成
 export const getStaticProps: GetStaticProps = async () => {
@@ -16,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { posts } }; // ← props 小文字でOK
 };
 
-const Archive = ({ posts }: { posts: any[] }) => {
+const Archive = ({ posts }: { posts: Post[] }) => {
   const navData = Data.top.header.nav;
   const router = useRouter();
   const { category } = router.query;
@@ -40,7 +41,7 @@ const Archive = ({ posts }: { posts: any[] }) => {
 
   //フィルター処理：カテゴリIDが一致する記事だけを抽出
   const filterPosts = category
-    ? posts.filter((post) => post.categories.includes(Number(category)))
+    ? posts.filter((post) => post.categories?.some((c) => c.id === Number(category)))
     : posts;
 
   return (
