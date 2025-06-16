@@ -37,6 +37,7 @@
   },
   "about": {
     "hero": {
+      "imgUrl": "/assets/profile.png",
       "title": "私について",
       "intro": "Web制作 × 文章制作 × AI活用"
     },

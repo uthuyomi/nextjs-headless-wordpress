@@ -7,6 +7,29 @@ import Header from "@/component/Header";
 import Link from "next/link";
 import Data from "@/data/data.json";
 
+type WP_Post = {
+  id: number;
+  slug: string;
+  title: { rendered: string };
+  content: { rendered: string };
+  excerpt: { rendered: string };
+  date: string;
+  author: number;
+  categories: number[];
+  tags: number[];
+  featured_media: number;
+};
+
+type BlogPostProps = {
+  post: WP_Post;
+  author: { name: string };
+  categoryNames: string[];
+  tagNames: string[];
+  featuredImage: string | null;
+  prevPost: { slug: string } | null;
+  nextPost: { slug: string } | null;
+};
+
 export default function BlogPost({
   post,
   author,
@@ -15,7 +38,7 @@ export default function BlogPost({
   featuredImage,
   prevPost,
   nextPost,
-}: any) {
+}: BlogPostProps) {
   const router = useRouter();
   if (router.isFallback) return <p>Loading...</p>;
 
@@ -138,7 +161,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const allRes = await fetch(
     `http://localhost/wordpress/wp-json/wp/v2/posts?categories=${mainCategory}&orderby=id&order=asc&per_page=100`
   );
-  const allPosts = await allRes.json();
+  const allPosts: WP_Post[] = await allRes.json();
 
   // 現在の投稿の位置を探す
   const index = allPosts.findIndex((p) => p.id === currentId);
