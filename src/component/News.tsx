@@ -6,9 +6,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { Post } from "@/types/types";
 
 type NewsProps = {
-  newsPost: any[];
+  newsPost: Post[];
   news: {
     title: string;
     noimg: string;
