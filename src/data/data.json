@@ -1,6 +1,6 @@
 {
   "top": {
-    "wpurl": "http://localhost/wp-json/wp/v2/posts?_embed",
+    "wpurl": "http://headless-wp.local/wp-json/wp/v2/posts?_embed",
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
