@@ -8,6 +8,12 @@ export type FeaturedMedia = {
   source_url: string;
 };
 
+export type Term = {
+  id: number;
+  name: string;
+  taxonomy: string;
+}
+
 export type Post = {
   id: number;
   title: {
@@ -22,6 +28,6 @@ export type Post = {
   jetpack_featured_media_url?: string; // ← 追加（環境によりある場合だけ）
   _embedded?: {
     "wp:featuredmedia"?: FeaturedMedia[];
-    "wp:term"?: any; // 必要に応じて型定義を追加
+    "wp:term"?: Term[][]; // 必要に応じて型定義を追加
   };
 };

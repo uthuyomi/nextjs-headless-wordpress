@@ -15,6 +15,9 @@ const archiveItem = ({ posts, noimg }: Props) => {
       {posts.map((post) => {
         const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
+        const categories = post._embedded?.["wp:term"]?.[0];
+        const categoryName = categories?.[0]?.name || "未分類";
+
         return (
           <article className={style.blogContentItem} key={post.id}>
             <div className={style.img}>
@@ -29,6 +32,7 @@ const archiveItem = ({ posts, noimg }: Props) => {
             <Link href={`/blog/${post.slug}`}>
               <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             </Link>
+            <p>{ categoryName }</p>
             <p>{new Date(post.date).toLocaleDateString()}</p>
           </article>
         );
