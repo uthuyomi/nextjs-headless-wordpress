@@ -1,18 +1,18 @@
 {
   "top": {
-    "wpurl": "http://wordpress.local/wp-json/wp/v2/posts?_embed",
+    "wpurl": "http://localhost/wp-json/wp/v2/posts?_embed",
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
-        { "label": "archive", "url": "/Archive" },
-        { "label": "about", "url": "/About" }
+        { "label": "archive", "url": "/archive" },
+        { "label": "about", "url": "/about" }
       ]
     },
     "hero": {
       "title": "つまずきを、武器にする。",
       "subtitle": "HTML. CSS. Javajscfipt php",
       "buttontext": "学習してみる",
-      "buttonlink": "http://wordpress.local/archive",
+      "buttonlink": "http://localhost/archive",
       "imageUrl": "/assets/hero.png"
     },
     "categories": {

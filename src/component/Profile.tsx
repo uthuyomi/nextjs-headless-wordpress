@@ -6,6 +6,7 @@ type aboutProps = {
   about: {
     title: string;
     content: string;
+    imageUrl: string;
   };
 };
 

@@ -19,6 +19,7 @@ export type Post = {
   date: string;
   slug: string;
   categories?: Category[]; // 任意。数字の配列で来る場合は number[] に
+  jetpack_featured_media_url?: string; // ← 追加（環境によりある場合だけ）
   _embedded?: {
     "wp:featuredmedia"?: FeaturedMedia[];
     "wp:term"?: any; // 必要に応じて型定義を追加
