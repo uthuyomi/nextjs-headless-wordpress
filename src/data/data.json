@@ -4,15 +4,15 @@
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
-        { "label": "archive", "url": "/archive" },
-        { "label": "about", "url": "/about" }
+        { "label": "archive", "url": "/Archive" },
+        { "label": "about", "url": "/About" }
       ]
     },
     "hero": {
       "title": "つまずきを、武器にする。",
       "subtitle": "HTML. CSS. Javajscfipt php",
       "buttontext": "学習してみる",
-      "buttonlink": "http://localhost/archive",
+      "buttonlink": "http://localhost/Archive",
       "imageUrl": "/assets/hero.png"
     },
     "categories": {
@@ -63,11 +63,11 @@
       "linkItem": [
         {
           "linkLabel": "💼 事業用サイト：",
-          "linkUrl": "https://example-business-site.com"
+          "linkUrl": "https://webyayasu.com/"
         },
         {
           "linkLabel": "🖼️ ポートフォリオ：",
-          "linkUrl": "https://example-portfolio-site.com"
+          "linkUrl": "https://uthuyomi.com"
         },
         {
           "linkLabel": "🐦 Twitter（X）：",
