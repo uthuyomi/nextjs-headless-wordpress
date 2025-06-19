@@ -53,7 +53,7 @@ const Category = ({ category }: categoryProps) => {
           <SwiperSlide key={item.id}>
             <div className={style.categoryContentItem}>
               <h3>
-                <Link href={`/archive?category=${item.id}`}>{item.name}</Link>
+                <Link href={`/Archive?category=${item.id}`}>{item.name}</Link>
               </h3>
               <p>{item.description || category.noDescription}</p>
             </div>
