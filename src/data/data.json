@@ -1,6 +1,6 @@
 {
   "top": {
-    "wpurl": "http://localhost/wordpress/wp-json/wp/v2/posts?_embed",
+    "wpurl": "http://127.0.0.1/wordpress/wp-json/wp/v2/posts?_embed",
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
@@ -12,7 +12,7 @@
       "title": "つまずきを、武器にする。",
       "subtitle": "HTML. CSS. Javajscfipt php",
       "buttontext": "学習してみる",
-      "buttonlink": "http://localhost/wordpress/Archive",
+      "buttonlink": "http://127.0.0.1/wordpress/Archive",
       "imageUrl": "/assets/hero.png"
     },
     "categories": {

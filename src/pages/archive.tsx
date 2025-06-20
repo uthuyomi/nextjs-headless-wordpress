@@ -26,7 +26,9 @@ const Archive = ({ posts }: { posts: Post[] }) => {
   useEffect(() => {
     // categoryが未定義 or 配列（エラーケース）の場合は無視
     if (category) {
-      fetch(`http://localhost/wordpress/wp-json/wp/v2/categories/${category}`)
+      fetch(
+        `http://127.0.0.1/wordpress/wp-json/wp/v2/categories/${category}`
+      )
         .then((res) => res.json())
         .then((data) => setCategoryName(data.name))
         .catch((err) => {
