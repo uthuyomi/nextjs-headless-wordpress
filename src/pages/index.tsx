@@ -11,6 +11,7 @@ export async function getStaticProps() {
   const url = Data.top.wpurl;
   const res = await fetch(url);
   const posts = await res.json();
+
   return {
     props: {
       posts,
@@ -19,6 +20,9 @@ export async function getStaticProps() {
 }
 
 export default function index({ posts }: { posts: Post[] }) {
+
+
+
   return (
     <>
       <Header nav={Data.top.header.nav} />
