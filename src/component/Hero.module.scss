@@ -5,12 +5,18 @@
   align-items: center;
   flex-wrap: nowrap;
   padding-top: 150px;
+  @media screen and ( max-wdith: 1200px){
+    flex-wrap: wrap;
+  }
   .heroText {
     width: 50%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    @media screen and ( max-wdith: 1200px){
+      width: 100%;
+    }
     h1 {
       font-size: 3em;
     }
