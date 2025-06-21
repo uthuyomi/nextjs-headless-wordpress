@@ -19,6 +19,7 @@ type categoryProps = {
   category: {
     title: string;
     noDescription: string;
+    more: string;
   };
 };
 
@@ -52,10 +53,9 @@ const Category = ({ category }: categoryProps) => {
         {categories.map((item) => (
           <SwiperSlide key={item.id}>
             <div className={style.categoryContentItem}>
-              <h3>
-                <Link href={`/Archive?category=${item.id}`}>{item.name}</Link>
-              </h3>
+              <h3>{item.name}</h3>
               <p>{item.description || category.noDescription}</p>
+              <Link href={`/Archive?category=${item.id}`}>{category.more}</Link>
             </div>
           </SwiperSlide>
         ))}

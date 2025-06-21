@@ -10,6 +10,7 @@
     justify-content: center;
     width: 100%;
     .categoryContentItem {
+      position: relative;
       width: 100%;
       height: 300px;
       background-color: #171d21;
@@ -25,6 +26,17 @@
         text-align: center;
         font-size: 1em;
         padding: 20px 30px;
+      }
+      a {
+        position: absolute;
+        display: block;
+        bottom: 30px;
+        left: 0;
+        width: 100%;
+        color: #00bfff;
+        font-size: 1em;
+        text-decoration: underline;
+        text-align: center;
       }
       :global(.slick-slide) {
         padding: 0 25px;

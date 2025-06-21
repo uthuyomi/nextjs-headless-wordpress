@@ -23,9 +23,11 @@ const Profile = ({ about }: aboutProps) => {
             height={200}
           />
         </div>
-        <p>{about.content}</p>
+        <div className={style.text}>
+          <p>{about.content}</p>
+          <Link href="https://webyayasu.com">プロフィールへ</Link>
+        </div>
       </div>
-      <Link href="https://webyayasu.com"></Link>
     </div>
   );
 };

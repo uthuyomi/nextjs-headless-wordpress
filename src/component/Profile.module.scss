@@ -12,7 +12,7 @@
     align-items: center;
     width: 100%;
     .img {
-      width: 30%;
+      width: 20%;
       aspect-ratio: 1/1;
       border-radius: 50%;
       background-color: #000000;
@@ -25,10 +25,13 @@
       }
     }
     p {
-      width: 70%;
+      width: 80%;
       font-size: 1em;
       line-height: 2em;
       padding: 0 50px;
+    }
+    a{
+
     }
   }
 }
