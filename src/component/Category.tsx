@@ -26,7 +26,7 @@ const Category = ({ category }: categoryProps) => {
   const [categories, setCategories] = useState<WP_Category[]>([]);
 
   useEffect(() => {
-    fetch("http:/127.0.0.1/wordpress/wp-json/wp/v2/categories")
+    fetch("http://127.0.0.1/wordpress/wp-json/wp/v2/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("カテゴリ取得失敗:", err));

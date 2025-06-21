@@ -6,7 +6,7 @@ import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Data from "@/data/data.json";
 import { useEffect, useState } from "react";
-import { Post } from '@/types/types';
+import { Post } from "@/types/types";
 
 // ビルド時に全記事を取得して静的生成
 export const getStaticProps: GetStaticProps = async () => {
@@ -26,9 +26,7 @@ const Archive = ({ posts }: { posts: Post[] }) => {
   useEffect(() => {
     // categoryが未定義 or 配列（エラーケース）の場合は無視
     if (category) {
-      fetch(
-        `http://127.0.0.1/wordpress/wp-json/wp/v2/categories/${category}`
-      )
+      fetch(`http://127.0.0.1/wordpress/wp-json/wp/v2/categories/${category}`)
         .then((res) => res.json())
         .then((data) => setCategoryName(data.name))
         .catch((err) => {
@@ -42,7 +40,9 @@ const Archive = ({ posts }: { posts: Post[] }) => {
 
   //フィルター処理：カテゴリIDが一致する記事だけを抽出
   const filterPosts = category
-    ? posts.filter((post) => post.categories?.some((c) => c.id === Number(category)))
+    ? posts.filter((post) =>
+        post.categories?.some((c) => c.id === Number(category))
+      )
     : posts;
 
   return (
