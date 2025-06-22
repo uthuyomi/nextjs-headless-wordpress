@@ -36,14 +36,14 @@ const Category = ({ category }: categoryProps) => {
   return (
     <div className={style.category}>
       <h2 className={style.title}>{category.title}</h2>
-      <div className={style.swiper_wrapper}>
+      <div className={style.slider_wrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={24}
           slidesPerView={4}
           navigation={{
-            prevEl: "#button_prev",
-            nextEl: "#button_next",
+            prevEl: "#button_prev01",
+            nextEl: "#button_next01",
           }}
           pagination={{ clickable: true }}
           className={style.categoryContent}

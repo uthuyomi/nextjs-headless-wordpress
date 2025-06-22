@@ -9,11 +9,11 @@
       font-size: 1.5em;
     }
   }
-  .swiper_wrapper {
+  .slider_wrapper {
     position: relative;
     padding: 0 50px;
+    width: 100%;
     .categoryContent {
-      width: 100%;
       :global(.swiper-slide) {
         display: flex;
         justify-content: center;
@@ -48,16 +48,17 @@
           }
         }
       }
+      
     }
     :global(.swiper-button-next) {
       right: 0;
       z-index: 100;
     }
-    :global(.swiper-button-prev){
+    :global(.swiper-button-prev) {
       left: 0;
       z-index: 100;
     }
-    :global(.swiper-pagination){
+    :global(.swiper-pagination) {
       position: relative !important;
     }
   }

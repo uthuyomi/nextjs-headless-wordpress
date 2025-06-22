@@ -28,8 +28,8 @@ const News = ({ news, newsPost }: NewsProps) => {
           spaceBetween={24}
           slidesPerView={1}
           navigation={{
-            prevEl: "#button_prev",
-            nextEl: "#button_next",
+            prevEl: "#button_prev02",
+            nextEl: "#button_next02",
           }}
           pagination={{ clickable: true }}
           centeredSlides={true}
