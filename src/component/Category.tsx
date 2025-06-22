@@ -36,30 +36,36 @@ const Category = ({ category }: categoryProps) => {
   return (
     <div className={style.category}>
       <h2 className={style.title}>{category.title}</h2>
-
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={24}
-        slidesPerView={4} // ← デフォルトはモバイル最小サイズ用に
-        navigation
-        pagination={{ clickable: true }}
-        className={style.categoryContent}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-        }}
-      >
-        {categories.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className={style.categoryContentItem}>
-              <h3>{item.name}</h3>
-              <p>{item.description || category.noDescription}</p>
-              <Link href={`/Archive?category=${item.id}`}>{category.more}</Link>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className={style.swiper_wrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={24}
+          slidesPerView={4}
+          navigation={{
+            prevEl: "#button_prev",
+            nextEl: "#button_next",
+          }}
+          pagination={{ clickable: true }}
+          className={style.categoryContent}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
+          {categories.map((item) => (
+            <SwiperSlide key={item.id}>
+              <div className={style.categoryContentItem}>
+                <h3>{item.name}</h3>
+                <p>{item.description || category.noDescription}</p>
+                <Link href={`/Archive?category=${item.id}`}>
+                  {category.more}
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
