@@ -1,6 +1,8 @@
 .blogItem{
-    padding-top: 120px;
-    width: 100%;
+    max-width: 1000px;
+    width: calc( 100% - 20px );
+    padding: 120px 10px 0;
+    margin: 0 auto;
     .heading{
         width: 100%;
         text-align: center;
