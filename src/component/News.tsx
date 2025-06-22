@@ -18,6 +18,7 @@ type NewsProps = {
 };
 
 const News = ({ news, newsPost }: NewsProps) => {
+
   return (
     <div className={style.article}>
       <h2>{news.title}</h2>
@@ -25,13 +26,14 @@ const News = ({ news, newsPost }: NewsProps) => {
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={24}
-        slidesPerView={3}
+        slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
+        centeredSlides={true}
         className={style.categorySwiper}
         breakpoints={{
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          768: { slidesPerView: 2, centeredSlides: false },
+          1024: { slidesPerView: 3, centeredSlides: false },
         }}
       >
         {newsPost.map((item) => (
@@ -44,6 +46,7 @@ const News = ({ news, newsPost }: NewsProps) => {
                   width={300}
                   height={200}
                 />
+                <span></span>
               </div>
               <div className={style.articleText}>
                 <h3 dangerouslySetInnerHTML={{ __html: item.title.rendered }} />

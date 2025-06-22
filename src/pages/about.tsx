@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "@/component/Header";
+import Footer from "@/component/Footer";
 import style from "@/styles/about.module.scss";
 import AboutHero from "@/pages/about/AboutHero";
 import AboutDescription from "./about/AboutDescription";
@@ -19,6 +20,7 @@ const About = () => {
         <AboutLink link={Data.about.link} />
         <AboutContact contact={Data.about.contact} />
       </main>
+      <Footer footer={Data.top.footer} />
     </>
   );
 };

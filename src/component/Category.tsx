@@ -45,9 +45,9 @@ const Category = ({ category }: categoryProps) => {
         pagination={{ clickable: true }}
         className={style.categoryContent}
         breakpoints={{
-          640: { slidesPerView: 2 },
+          0: { slidesPerView: 1 },
           768: { slidesPerView: 3 },
-          1200: { slidesPerView: 4 }, // ← PC幅で4枚表示
+          1024: { slidesPerView: 4 },
         }}
       >
         {categories.map((item) => (

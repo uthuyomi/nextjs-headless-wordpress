@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "@/component/Header";
 import ArchiveItem from "@/pages/archive/ArchiveItem";
+import Footer from "@/component/Footer";
 import style from "@/styles/archive.module.scss";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
@@ -54,6 +55,7 @@ const Archive = ({ posts }: { posts: Post[] }) => {
         </h2>
         <ArchiveItem posts={filterPosts} noimg={Data.archive.noimg} />
       </section>
+      <Footer footer={Data.top.footer} />
     </>
   );
 };

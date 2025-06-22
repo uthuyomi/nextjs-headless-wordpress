@@ -26,10 +26,12 @@ export default function index({ posts }: { posts: Post[] }) {
   return (
     <>
       <Header nav={Data.top.header.nav} />
-      <Hero hero={Data.top.hero} />
-      <Category category={Data.top.categories} />
-      <News news={Data.top.news} newsPost={posts} />
-      <Profile about={Data.top.profile} />
+      <div className="main">
+        <Hero hero={Data.top.hero} />
+        <Category category={Data.top.categories} />
+        <News news={Data.top.news} newsPost={posts} />
+        <Profile about={Data.top.profile} />
+      </div>
       <Footer footer={Data.top.footer} />
     </>
   );

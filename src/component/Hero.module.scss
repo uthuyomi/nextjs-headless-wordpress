@@ -5,7 +5,7 @@
   align-items: center;
   flex-wrap: nowrap;
   padding-top: 150px;
-  @media screen and ( max-wdith: 1200px){
+  @media screen and (max-width: 1000px) {
     flex-wrap: wrap;
   }
   .heroText {
@@ -14,8 +14,9 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    @media screen and ( max-wdith: 1200px){
-      width: 100%;
+    @media screen and ( max-width: 1000px) {
+      width: 80%;
+      order: 2;
     }
     h1 {
       font-size: 3em;
@@ -30,9 +31,17 @@
       background-color: rgb(98, 153, 255);
       margin: 1em 0 0;
       border-radius: 20px;
+      @media screen and ( max-width: 1000px) {
+        padding: 1em;
+        font-size: 1em;
+        margin: 1em auto 0;
+      }
     }
   }
   .heroImg {
+    @media screen and ( max-width: 1000px) {
+      padding: 1em;
+    }
     .img {
       img {
       }
