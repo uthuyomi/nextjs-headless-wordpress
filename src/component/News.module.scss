@@ -44,7 +44,13 @@
           border-top-left-radius: 30px;
           border-top-right-radius: 30px;
           overflow: hidden;
-
+          .categories{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: inline-block;
+            padding: 5px;
+          }
           img {
             position: absolute;
             top: 50%;
@@ -81,11 +87,11 @@
       }
     }
     :global(.swiper-button-next) {
-      right: 0;
+      right: 20px;
       z-index: 100;
     }
     :global(.swiper-button-prev){
-      left: 0;
+      left: 20px;
       z-index: 100;
     }
     :global(.swiper-pagination){

@@ -28,8 +28,8 @@ const News = ({ news, newsPost }: NewsProps) => {
           spaceBetween={24}
           slidesPerView={1}
           navigation={{
-            prevEl: "#button_prev02",
-            nextEl: "#button_next02",
+            prevEl: "#button_prev_news",
+            nextEl: "#button_next_news",
           }}
           pagination={{ clickable: true }}
           centeredSlides={true}
@@ -49,7 +49,13 @@ const News = ({ news, newsPost }: NewsProps) => {
                     width={300}
                     height={200}
                   />
-                  <span></span>
+                  {item._embedded?.["wp:term"]?.[0]?.length ? (
+                    <span className={style.categories}>
+                      {item._embedded["wp:term"][0] // ← categories[]
+                        .map((cat) => cat.name) //   名前だけ抜く
+                      }
+                    </span>
+                  ) : null}
                 </div>
                 <div className={style.articleText}>
                   <h3
@@ -62,8 +68,8 @@ const News = ({ news, newsPost }: NewsProps) => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div id="button_prev" className="swiper-button-prev"></div>
-        <div id="button_next" className="swiper-button-next"></div>
+        <div id="button_prev_news" className="swiper-button-prev"></div>
+        <div id="button_next_news" className="swiper-button-next"></div>
       </div>
     </div>
   );

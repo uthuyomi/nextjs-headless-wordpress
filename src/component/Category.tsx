@@ -1,12 +1,12 @@
 import style from "@/component/Category.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
 
 type WP_Category = {
   id: number;
@@ -42,8 +42,8 @@ const Category = ({ category }: categoryProps) => {
           spaceBetween={24}
           slidesPerView={4}
           navigation={{
-            prevEl: "#button_prev01",
-            nextEl: "#button_next01",
+            prevEl: "#button_prev_category",
+            nextEl: "#button_next_category",
           }}
           pagination={{ clickable: true }}
           className={style.categoryContent}
@@ -65,6 +65,8 @@ const Category = ({ category }: categoryProps) => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div id="button_prev_category" className="swiper-button-prev"></div>
+        <div id="button_next_category" className="swiper-button-next"></div>
       </div>
     </div>
   );
