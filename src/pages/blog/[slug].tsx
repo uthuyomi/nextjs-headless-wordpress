@@ -97,7 +97,7 @@ export default function BlogPost({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("http://127.0.0.1/wordpress/wp-json/wp/v2/posts");
+  const res = await fetch("https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts");
   const posts = await res.json();
 
   const paths = posts.map((post: any) => ({
@@ -110,7 +110,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug;
   const res = await fetch(
-    `http://127.0.0.1/wordpress/wp-json/wp/v2/posts?slug=${slug}`
+    `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts?slug=${slug}`
   );
   const posts = await res.json();
 
@@ -120,7 +120,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   // 著者
   const authorRes = await fetch(
-    `http://127.0.0.1/wordpress/wp-json/wp/v2/users/${post.author}`
+    `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/users/${post.author}`
   );
   const author = await authorRes.json();
 
@@ -128,7 +128,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const catRes = await Promise.all(
     post.categories.map((id: number) =>
       fetch(
-        `http://127.0.0.1/wordpress/wp-json/wp/v2/categories/${id}`
+        `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories/${id}`
       ).then((r) => r.json())
     )
   );
@@ -137,7 +137,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // タグ名取得
   const tagRes = await Promise.all(
     post.tags.map((id: number) =>
-      fetch(`http://127.0.0.1/wordpress/wp-json/wp/v2/tags/${id}`).then(
+      fetch(`https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/tags/${id}`).then(
         (r) => r.json()
       )
     )
@@ -148,7 +148,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   let featuredImage = null;
   if (post.featured_media) {
     const imgRes = await fetch(
-      `http://127.0.0.1/wordpress/wp-json/wp/v2/media/${post.featured_media}`
+      `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/media/${post.featured_media}`
     );
     const img = await imgRes.json();
     featuredImage = img.source_url;
@@ -159,7 +159,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   // カテゴリ内の投稿を全件（100件まで）取得
   const allRes = await fetch(
-    `http://127.0.0.1/wordpress/wp-json/wp/v2/posts?categories=${mainCategory}&orderby=id&order=asc&per_page=100`
+    `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts?categories=${mainCategory}&orderby=id&order=asc&per_page=100`
   );
   const allPosts: WP_Post[] = await allRes.json();
 

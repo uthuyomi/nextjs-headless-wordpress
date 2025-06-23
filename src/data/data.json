@@ -1,18 +1,19 @@
 {
   "top": {
-    "wpurl": "http://127.0.0.1/wordpress/wp-json/wp/v2/posts?_embed",
+    "wpurl": "https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts?_embed",
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
-        { "label": "archive", "url": "/archive" },
-        { "label": "about", "url": "/about" }
+        { "label": "archive", "url": "/Archive" },
+        { "label": "about", "url": "/About" },
+        { "label": "us", "url": "https://webyayasu.com" }
       ]
     },
     "hero": {
       "title": "つまずきを、武器にする。",
       "subtitle": "HTML. CSS. Javascript. PHP\n基礎学習ブログ",
       "buttontext": "学習してみる",
-      "buttonlink": "http://127.0.0.1/wordpress/Archive",
+      "buttonlink": "https://webyayasu.sakura.ne.jp/uthuyomizyuku/Archive",
       "imageUrl": "/assets/hero.png"
     },
     "categories": {

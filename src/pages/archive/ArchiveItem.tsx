@@ -28,7 +28,7 @@ const archiveItem = ({ posts, noimg }: Props) => {
                 height={340}
                 className={style.thumbnail}
               />
-              <span>{categoryName}</span>
+              <span className={style.categoryLabel}>{categoryName}</span>
             </div>
             <Link href={`/blog/${post.slug}`}>
               <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />

@@ -50,9 +50,10 @@ const News = ({ news, newsPost }: NewsProps) => {
                     height={200}
                   />
                   {item._embedded?.["wp:term"]?.[0]?.length ? (
-                    <span className={style.categories}>
-                      {item._embedded["wp:term"][0] // ← categories[]
-                        .map((cat) => cat.name) //   名前だけ抜く
+                    <span className={style.categoryLabel}>
+                      {
+                        item._embedded["wp:term"][0] // ← categories[]
+                          .map((cat) => cat.name) //   名前だけ抜く
                       }
                     </span>
                   ) : null}
