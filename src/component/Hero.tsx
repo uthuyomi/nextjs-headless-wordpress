@@ -18,7 +18,9 @@ const Hero = ({ hero }: HeroProps) => {
     <div className={style.hero}>
       <div className={style.heroText}>
         <h1>{hero.title}</h1>
-        <p>{hero.subtitle}</p>
+        <p style={{ whiteSpace: "pre-line" /* or "pre-wrap" */ }}>
+          {hero.subtitle}
+        </p>
         <Link href={hero.buttonlink}>{hero.buttontext}</Link>
       </div>
       <div className={style.heroImg}>
