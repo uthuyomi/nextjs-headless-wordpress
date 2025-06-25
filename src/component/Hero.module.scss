@@ -14,10 +14,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    @media screen and (min-width: 1000px) and ( max-width: 1240px) {
+    @media screen and (min-width: 1000px) and (max-width: 1240px) {
       padding-left: 40px;
     }
-    @media screen and ( max-width: 1000px) {
+    @media screen and (max-width: 1000px) {
       width: 80%;
       order: 2;
     }
@@ -29,20 +29,14 @@
     }
     a {
       display: block;
-      font-size: 2em;
-      padding: 0.5em;
-      background-color: rgb(98, 153, 255);
-      margin: 1em 0 0;
-      border-radius: 20px;
-      @media screen and ( max-width: 1000px) {
-        padding: 1em;
-        font-size: 1em;
-        margin: 1em auto 0;
-      }
+      width: 160px;
+      margin: 30px  calc( 50% - 80px ) 0;
+      border: solid 1px #ffffff;
+      padding: 20px 30px;
     }
   }
   .heroImg {
-    @media screen and ( max-width: 1000px) {
+    @media screen and (max-width: 1000px) {
       padding: 1em;
     }
   }

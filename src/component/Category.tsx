@@ -36,7 +36,7 @@ const Category = ({ category }: categoryProps) => {
   }, []); // ← 無限fetchバグ修正（依存配列忘れてた）
 
   return (
-    <div className={style.category}>
+    <div id="category" className={style.category}>
       <h2 className={style.title}>{category.title}</h2>
       <div className={style.slider_wrapper}>
         <Swiper

@@ -23,7 +23,7 @@
       justify-content: center;
       // 各スライドの中身
       .articleContentItem {
-        border-radius: 30px;
+        border-radius: 10px;
         background-color: #171d21;
         overflow: hidden; // 角丸反映のため
         width: 380px;
@@ -41,8 +41,8 @@
           width: 100%;
           aspect-ratio: 16/9;
           background-color: #ffffff;
-          border-top-left-radius: 30px;
-          border-top-right-radius: 30px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
           overflow: hidden;
           .categoryLabel{
             position: absolute;

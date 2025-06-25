@@ -7,20 +7,14 @@ import { Post, Category } from "@/types/types";
 type Props = {
   posts: Post[];
   noimg: string;
+  categoryName: string;
 };
 
-const archiveItem = ({ posts, noimg }: Props) => {
+const archiveItem = ({ posts, noimg, categoryName }: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
         const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
-
-        const categoryTerms = post._embedded?.["wp:term"]?.find(
-          (terms): terms is Category[] =>
-            Array.isArray(terms) && terms[0]?.taxonomy === "category"
-        );
-
-        const categoryName = categoryTerms?.[0]?.name ?? "未分類";
 
         return (
           <article className={style.blogContentItem} key={post.id}>

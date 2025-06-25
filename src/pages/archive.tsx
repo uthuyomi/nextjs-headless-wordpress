@@ -64,7 +64,15 @@ const Archive = ({ posts }: { posts: Post[] }) => {
             ? `${categoryName || "カテゴリ"} 一覧`
             : Data.archive.blogLabel}
         </h2>
-        <ArchiveItem posts={filteredPosts} noimg={Data.archive.noimg} />
+        <ArchiveItem
+          posts={filteredPosts}
+          noimg={Data.archive.noimg}
+          categoryName={
+            category
+              ? `${categoryName || "カテゴリ"}`
+              : Data.archive.blogLabel
+          }
+        />
       </section>
       <Footer footer={Data.top.footer} />
     </>
