@@ -14,7 +14,7 @@
       "subtitle": "HTML. CSS. Javascript. PHP\n基礎学習ブログ",
       "buttontext": "学習してみる",
       "buttonlink": "/#category",
-      "imageUrl": "/assets/hero.png"
+      "imageUrl": "/uthuyomizyuku/assets/hero.png"
     },
     "categories": {
       "title": "学習カテゴリ",
@@ -23,12 +23,12 @@
     },
     "news": {
       "title": "新着記事",
-      "noimg": "/assets/noimg.jpg",
+      "noimg": "/uthuyomizyuku/assets/noimg.jpg",
       "linkLabel": "続きを読む"
     },
     "profile": {
       "title": "自己紹介 / このサイトについて",
-      "imageUrl": "/assets/profile.png",
+      "imageUrl": "/uthuyomizyuku/assets/profile.png",
       "content": "フリーランスのWebエンジニア。独学で何度もつまずいた経験をもとに、初心者にも“ちゃんとわかる”学習コンテンツを発信しています。"
     },
     "footer": {
@@ -39,7 +39,7 @@
   },
   "about": {
     "hero": {
-      "imgUrl": "/assets/profile.png",
+      "imgUrl": "/uthuyomizyuku/assets/profile.png",
       "title": "私について",
       "intro": "Web制作 × 文章制作 × AI活用"
     },
@@ -88,6 +88,6 @@
   "archive": {
     "categoryLabel": "カテゴリ別記事一覧",
     "blogLabel": "ブログ一覧",
-    "noimg": "/assets/noimg.jpg"
+    "noimg": "/uthuyomizyuku/assets/noimg.jpg"
   }
 }
