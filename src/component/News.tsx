@@ -69,8 +69,12 @@ const News = ({ news, newsPost }: NewsProps) => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div id="button_prev_news" className="swiper-button-prev"></div>
-        <div id="button_next_news" className="swiper-button-next"></div>
+        <div
+          id="button_prev_news"
+          className="swiper-button-prev"></div>
+        <div
+          id="button_next_news"
+          className="swiper-button-next"></div>
       </div>
     </div>
   );

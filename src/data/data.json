@@ -23,7 +23,7 @@
     },
     "news": {
       "title": "新着記事",
-      "noimg": "/assets/noimg.png",
+      "noimg": "/assets/noimg.jpg",
       "linkLabel": "続きを読む"
     },
     "profile": {
@@ -45,8 +45,8 @@
     },
     "description": {
       "title": "自己紹介",
-      "descriptionText01": "北海道札幌市を拠点に活動している、Webコーダー／ライターの安崎海星（YasuzakiKaisei）です。<br>フロントエンドの実装から、WordPressテーマの開発、小説・技術記事の執筆まで──「構造」と「言語」を軸に、多領域での表現と設計を行っています。",
-      "descriptionText02": "単なる実装ではなく、クライアントの意図や読者の理解までを視野に入れた「設計としてのコーディング」「構造としてのライティング」を重視。<br>自身の制作物には、意味のある余白と、静かな文脈を宿すよう心がけています。"
+      "descriptionText01": "北海道札幌市を拠点に活動している、Webコーダー兼ライターの安崎海星（Yasuzaki Kaisei）です。ホームページの見た目づくりや動きの実装、WordPressのカスタマイズ、小説や技術に関する記事の執筆など、幅広く取り組んでいます。",
+      "descriptionText02": "ただ作るだけでなく、「誰が、どう感じるか」「どうすれば伝わるか」を大切にしながら、文章やコードを丁寧に設計しています。自分の作品には、必要な“間”や“余白”がちゃんと息づくように心がけています。"
     },
     "skill": {
       "title": "スキルセット",
@@ -88,6 +88,6 @@
   "archive": {
     "categoryLabel": "カテゴリ別記事一覧",
     "blogLabel": "ブログ一覧",
-    "noimg": "/assets/noimg.png"
+    "noimg": "/assets/noimg.jpg"
   }
 }

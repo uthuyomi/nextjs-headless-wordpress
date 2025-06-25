@@ -1,19 +1,25 @@
+// taxonomy: "category" に限定されたカテゴリ型
 export type Category = {
   id: number;
   name: string;
   slug: string;
+  taxonomy: "category";
 };
 
+// 通常のTerm型（タグやカスタムタクソノミーも含む汎用）
+export type Term = {
+  id: number;
+  name: string;
+  slug: string;
+  taxonomy: string;
+};
+
+// アイキャッチ画像など
 export type FeaturedMedia = {
   source_url: string;
 };
 
-export type Term = {
-  id: number;
-  name: string;
-  taxonomy: string;
-}
-
+// 投稿記事型
 export type Post = {
   id: number;
   title: {
@@ -24,10 +30,10 @@ export type Post = {
   };
   date: string;
   slug: string;
-  categories?: Category[]; // 任意。数字の配列で来る場合は number[] に
-  jetpack_featured_media_url?: string; // ← 追加（環境によりある場合だけ）
+  categories?: number[]; // WPが返すカテゴリID配列（軽量取得時用）
+  jetpack_featured_media_url?: string;
   _embedded?: {
     "wp:featuredmedia"?: FeaturedMedia[];
-    "wp:term"?: Term[][]; // 必要に応じて型定義を追加
+    "wp:term"?: Term[][]; // 各タクソノミーごとの Term 配列（カテゴリ・タグなどが入る）
   };
 };

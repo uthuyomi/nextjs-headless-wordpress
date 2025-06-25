@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/component/Header";
-import ArchiveItem from "@/pages/archive/ArchiveItem";
+import ArchiveItem from "@/component/archive/ArchiveItem";
 import Footer from "@/component/Footer";
 import style from "@/styles/archive.module.scss";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Data from "@/data/data.json";
-import { useEffect, useState } from "react";
 import { Post } from "@/types/types";
 
-// ビルド時に全記事を取得して静的生成
+// すべての投稿を取得して静的生成
 export const getStaticProps: GetStaticProps = async () => {
-  const url = Data.top.wpurl;
+  const url = `${Data.top.wpurl}?_embed&per_page=100`; // アイキャッチ含む
   const res = await fetch(url);
   const posts = await res.json();
-  return { props: { posts } }; // ← props 小文字でOK
+  return { props: { posts } };
 };
 
 const Archive = ({ posts }: { posts: Post[] }) => {
@@ -22,40 +21,50 @@ const Archive = ({ posts }: { posts: Post[] }) => {
   const router = useRouter();
   const { category } = router.query;
 
-  // 動的に取得したカテゴリ名を格納
   const [categoryName, setCategoryName] = useState<string | null>(null);
+
+  // カテゴリ名を取得
   useEffect(() => {
-    // categoryが未定義 or 配列（エラーケース）の場合は無視
-    if (category) {
-      fetch(
-        `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories/${category}`
-      )
+    if (typeof category === "string") {
+      const isNumeric = /^\d+$/.test(category);
+      const url = isNumeric
+        ? `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories/${category}`
+        : `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories?slug=${category}`;
+
+      fetch(url)
         .then((res) => res.json())
-        .then((data) => setCategoryName(data.name))
-        .catch((err) => {
+        .then((data) => {
+          //slugで取得した場合、配列になる
+          const categoryData = Array.isArray(data) ? data[0] : data;
+          if (categoryData?.name) {
+            setCategoryName(categoryData.name);
+          } else {
+            setCategoryName("取得エラー");
+          }
+        })
+        .catch((err) => { 
           console.error("カテゴリ名の取得に失敗:", err);
-          setCategoryName(null);
-        });
-    } else {
-      setCategoryName(null);
+          setCategoryName("取得エラー");
+        })
     }
   }, [category]);
 
-  //フィルター処理：カテゴリIDが一致する記事だけを抽出
-  const filterPosts = category
-    ? posts.filter((post) =>
-        post.categories?.some((c) => c.id === Number(category))
-      )
-    : posts;
+  // カテゴリIDで記事をフィルタリング
+  const filteredPosts =
+    typeof category === "string"
+      ? posts.filter((post) => post.categories?.includes(Number(category)))
+      : posts;
 
   return (
     <>
       <Header nav={navData} />
       <section className={style.archive}>
         <h2 className={style.heading}>
-          {category ? `${categoryName} 一覧` : Data.archive.blogLabel}
+          {category
+            ? `${categoryName || "カテゴリ"} 一覧`
+            : Data.archive.blogLabel}
         </h2>
-        <ArchiveItem posts={filterPosts} noimg={Data.archive.noimg} />
+        <ArchiveItem posts={filteredPosts} noimg={Data.archive.noimg} />
       </section>
       <Footer footer={Data.top.footer} />
     </>

@@ -51,12 +51,14 @@
       
     }
     :global(.swiper-button-next) {
-      right: 20px;
+      right: 10px;
       z-index: 50;
+      --swiper-navigation-color: #ffffff;
     }
     :global(.swiper-button-prev) {
-      left: 20px;
-      z-index: 150;
+      left: 10px;
+      z-index: 50;
+      --swiper-navigation-color: #ffffff;
     }
     :global(.swiper-pagination) {
       position: relative !important;
