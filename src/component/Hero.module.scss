@@ -22,10 +22,10 @@
       order: 2;
     }
     h1 {
-      font-size: 3em;
+      font-size: 3rem;
     }
     p {
-      font-size: 2em;
+      font-size: 2rem;
     }
     a {
       display: block;
@@ -37,7 +37,7 @@
   }
   .heroImg {
     @media screen and (max-width: 1000px) {
-      padding: 1em;
+      padding: 1rem;
     }
   }
 }
