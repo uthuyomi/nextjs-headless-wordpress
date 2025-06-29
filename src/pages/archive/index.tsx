@@ -7,15 +7,19 @@ import { Post } from "@/types/types";
 type Props = {
   posts: Post[];
   noimg: string;
-  categoryName: string;
 };
 
-const archiveItem = ({ posts, noimg, categoryName }: Props) => {
+const archiveItem = ({ posts, noimg}: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
         const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
+        // ← ここが重要：カテゴリだけを抽出
+        const categoryTerms = post._embedded?.["wp:term"]?.flat()
+          ?.filter((term) => term.taxonomy === "category")
+          ?.map((term) => term.name);
+        console.log(categoryTerms);
         return (
           <article className={style.blogContentItem} key={post.id}>
             <div className={style.img}>
@@ -26,7 +30,11 @@ const archiveItem = ({ posts, noimg, categoryName }: Props) => {
                 height={340}
                 className={style.thumbnail}
               />
-              <span className={style.categoryLabel}>{categoryName}</span>
+              <div className={style.categoryLabel}>
+                {post.categoryNames?.map((name) => (
+                  <span key={name}>#{name}</span>
+                ))}
+              </div>
             </div>
             <Link href={`/blog/${post.slug}`}>
               <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />

@@ -16,26 +16,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const url = `${Data.top.wpurl}?_embed&per_page=100`;
   const res = await fetch(url);
   const posts = await res.json();
-
-  // カテゴリマスタを取得
-  const categoryRes = await fetch(
-    "https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories?per_page=100"
-  );
-  const categoryData = await categoryRes.json();
-
-  // ID → 名前 のマップ
-  const categoryMap: Record<number, string> = {};
-  categoryData.forEach((cat: any) => {
-    categoryMap[cat.id] = cat.name;
-  });
-
-  // 各記事にカテゴリ名（配列）を追加
-  const postsWithCategoryNames = posts.map((post: any) => ({
-    ...post,
-    categoryNames: post.categories?.map((id: number) => categoryMap[id]) ?? [],
-  }));
-
-  return { props: { posts: postsWithCategoryNames } };
+  return { props: { posts } };
 };
 
 const Archive = ({ posts }: Props) => {

@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-
 type WP_Category = {
   id: number;
   name: string;
@@ -60,7 +59,7 @@ const Category = ({ category }: categoryProps) => {
               <div className={style.categoryContentItem}>
                 <h3>{item.name}</h3>
                 <p>{item.description || category.noDescription}</p>
-                <Link href={`/Archive?category=${item.id}`}>
+                <Link href={`/Category?category=${item.id}`}>
                   {category.more}
                 </Link>
               </div>
