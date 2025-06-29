@@ -10,7 +10,7 @@ type Props = {
   categoryName: string;
 };
 
-const archiveItem = ({ posts, noimg, categoryName }: Props) => {
+const categoryItem = ({ posts, noimg, categoryName }: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
@@ -43,4 +43,4 @@ const archiveItem = ({ posts, noimg, categoryName }: Props) => {
     </div>
   );
 };
-export default archiveItem;
+export default categoryItem;

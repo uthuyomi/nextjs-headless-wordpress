@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return { props: { posts } };
 };
 
-const Archive = ({ posts }: Props) => {
+const category = ({ posts }: Props) => {
   const router = useRouter();
   const { category } = router.query;
 
@@ -78,4 +78,4 @@ const Archive = ({ posts }: Props) => {
   );
 };
 
-export default Archive;
+export default category;

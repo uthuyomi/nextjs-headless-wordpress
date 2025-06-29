@@ -31,7 +31,6 @@ export type Post = {
   date: string;
   slug: string;
   categories?: number[]; // WPが返すカテゴリID配列（軽量取得時用)
-  categoryNames?: string[];
   jetpack_featured_media_url?: string;
   _embedded?: {
     "wp:featuredmedia"?: FeaturedMedia[];

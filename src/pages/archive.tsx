@@ -62,13 +62,7 @@ const Archive = ({ posts }: Props) => {
     <>
       <Header nav={Data.top.header.nav} />
       <section className={style.archive}>
-        <h2 className={style.heading}>
-          {!category
-            ? Data.archive.blogLabel // ← 例：「すべての記事」
-            : categoryName
-            ? `${categoryName} 一覧`
-            : "カテゴリ未取得"}
-        </h2>
+        <h2 className={style.heading}>記事一覧</h2>
         <ArchiveItem posts={filteredPosts} noimg={Data.archive.noimg} />
       </section>
       <Footer footer={Data.top.footer} />
