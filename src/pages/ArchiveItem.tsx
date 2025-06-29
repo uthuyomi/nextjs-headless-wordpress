@@ -2,24 +2,26 @@ import React from "react";
 import style from "@/styles/archive.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { Post } from "@/types/types";
+import { Post, Category } from "@/types/types";
 
 type Props = {
   posts: Post[];
   noimg: string;
 };
 
-const archiveItem = ({ posts, noimg}: Props) => {
+const archiveItem = ({ posts, noimg }: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
         const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
-        // ← ここが重要：カテゴリだけを抽出
-        const categoryTerms = post._embedded?.["wp:term"]?.flat()
-          ?.filter((term) => term.taxonomy === "category")
-          ?.map((term) => term.name);
-        console.log(categoryTerms);
+        // カテゴリのみを抽出
+        const terms = post._embedded?.["wp:term"]?.[0] ?? [];
+        const categories = terms.filter(
+          (term): term is Category => term.taxonomy === "category"
+        );
+
+        const primaryCategory = categories[0];
         return (
           <article className={style.blogContentItem} key={post.id}>
             <div className={style.img}>
@@ -30,11 +32,16 @@ const archiveItem = ({ posts, noimg}: Props) => {
                 height={340}
                 className={style.thumbnail}
               />
-              <div className={style.categoryLabel}>
-                {post.categoryNames?.map((name) => (
-                  <span key={name}>#{name}</span>
-                ))}
-              </div>
+              <span>
+                {" "}
+                {primaryCategory ? (
+                  <Link href={`/category/${primaryCategory.id}`}>
+                    {primaryCategory.name}
+                  </Link>
+                ) : (
+                  "未分類"
+                )}
+              </span>
             </div>
             <Link href={`/blog/${post.slug}`}>
               <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />

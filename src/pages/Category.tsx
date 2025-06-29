@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
-import ArchiveItem from "@/pages/category/index";
+import ArchiveItem from "@/pages/CategoryItem";
 import Footer from "@/component/Footer";
 import style from "@/styles/archive.module.scss";
 import Data from "@/data/data.json";

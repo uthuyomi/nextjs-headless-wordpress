@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
-import ArchiveItem from "@/pages/category/index";
+import ArchiveItem from "@/pages/CategoryItem";
 import Footer from "@/component/Footer";
 import style from "@/styles/archive.module.scss";
 import Data from "@/data/data.json";
@@ -13,29 +13,10 @@ type Props = {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const url = `${Data.top.wpurl}?_embed&per_page=100`;
+  const url = `${Data.top.wpurl}&per_page=100`;
   const res = await fetch(url);
   const posts = await res.json();
-
-  // カテゴリマスタを取得
-  const categoryRes = await fetch(
-    "https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories?per_page=100"
-  );
-  const categoryData = await categoryRes.json();
-
-  // ID → 名前 のマップ
-  const categoryMap: Record<number, string> = {};
-  categoryData.forEach((cat: any) => {
-    categoryMap[cat.id] = cat.name;
-  });
-
-  // 各記事にカテゴリ名（配列）を追加
-  const postsWithCategoryNames = posts.map((post: any) => ({
-    ...post,
-    categoryNames: post.categories?.map((id: number) => categoryMap[id]) ?? [],
-  }));
-
-  return { props: { posts: postsWithCategoryNames } };
+  return { props: { posts } };
 };
 
 const Archive = ({ posts }: Props) => {
@@ -44,6 +25,7 @@ const Archive = ({ posts }: Props) => {
 
   const [categoryName, setCategoryName] = useState<string | null>(null);
 
+  //タグ取得
   useEffect(() => {
     if (typeof category === "string") {
       const isNumeric = /^\d+$/.test(category);
@@ -69,6 +51,7 @@ const Archive = ({ posts }: Props) => {
       setCategoryName(null);
     }
   }, [category]);
+  //ここまで
 
   const filteredPosts =
     typeof category === "string"
@@ -86,11 +69,7 @@ const Archive = ({ posts }: Props) => {
             ? `${categoryName} 一覧`
             : "カテゴリ未取得"}
         </h2>
-        <ArchiveItem
-          posts={filteredPosts}
-          noimg={Data.archive.noimg}
-          categoryName={categoryName ?? "カテゴリ"}
-        />
+        <ArchiveItem posts={filteredPosts} noimg={Data.archive.noimg} />
       </section>
       <Footer footer={Data.top.footer} />
     </>
