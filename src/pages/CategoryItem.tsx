@@ -10,16 +10,12 @@ type Props = {
   categoryName: string;
 };
 
-const categoryItem = ({ posts, noimg, categoryName }: Props) => {
+const categoryItem = ({ posts, noimg, categoryName}: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
+        //サムネイル取得
         const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
-
-        // ← ここが重要：カテゴリだけを抽出
-        const categoryTerms = post._embedded?.["wp:term"]?.[0]
-          ?.filter((term) => term.taxonomy === "category")
-          ?.map((term) => term.name);
 
         return (
           <article className={style.blogContentItem} key={post.id}>
