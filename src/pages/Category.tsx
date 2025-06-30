@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return { props: { posts } };
 };
 
-const category = ({ posts }: Props) => {
+const Category = ({ posts }: Props) => {
   const router = useRouter();
   const { category } = router.query;
 
@@ -70,7 +70,7 @@ const category = ({ posts }: Props) => {
         <CategoryItem
           posts={filteredPosts}
           noimg={Data.archive.noimg}
-          categoryName={categoryName}
+          categoryName={categoryName??"カテゴリ未取得"}
         />
       </section>
       <Footer footer={Data.top.footer} />
@@ -78,4 +78,4 @@ const category = ({ posts }: Props) => {
   );
 };
 
-export default category;
+export default Category;

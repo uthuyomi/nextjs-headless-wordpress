@@ -7,6 +7,8 @@ type aboutProps = {
     title: string;
     content: string;
     imageUrl: string;
+    aboutText: string;
+    aboutLink: string;
   };
 };
 
@@ -25,7 +27,7 @@ const Profile = ({ about }: aboutProps) => {
         </div>
         <div className={style.text}>
           <p>{about.content}</p>
-          <Link href="https://webyayasu.com">プロフィールへ</Link>
+          <Link href={about.aboutLink}>{about.aboutText}</Link>
         </div>
       </div>
     </div>

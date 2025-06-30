@@ -5,11 +5,11 @@ import Image from "next/image";
 import { Post } from "@/types/types";
 
 type Props = {
-  posts: Post[];
+  posts?: Post[]; // ← undefined許容（安全のため）
   noimg: string;
 };
 
-const archiveItem = ({ posts, noimg }: Props) => {
+const ArchiveItem = ({ posts = [], noimg }: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
@@ -17,7 +17,8 @@ const archiveItem = ({ posts, noimg }: Props) => {
 
         const categoryTerms = post._embedded?.["wp:term"]?.[0]
           ?.filter((term) => term.taxonomy === "category")
-          ?.map((term) => term.name);
+          ?.map((term) => term.name)
+          ?.join(", "); // ← 配列を文字列化して表示
 
         return (
           <article className={style.blogContentItem} key={post.id}>
@@ -29,7 +30,9 @@ const archiveItem = ({ posts, noimg }: Props) => {
                 height={340}
                 className={style.thumbnail}
               />
-              <span className={style.categoryLabel}>{categoryTerms}</span>
+              <span className={style.categoryLabel}>
+                {categoryTerms ?? "カテゴリなし"}
+              </span>
             </div>
             <Link href={`/blog/${post.slug}`}>
               <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
@@ -41,4 +44,5 @@ const archiveItem = ({ posts, noimg }: Props) => {
     </div>
   );
 };
-export default archiveItem;
+
+export default ArchiveItem;

@@ -5,12 +5,12 @@ import Image from "next/image";
 import { Post } from "@/types/types";
 
 type Props = {
-  posts: Post[];
+  posts?: Post[];
   noimg: string;
   categoryName: string;
 };
 
-const categoryItem = ({ posts, noimg, categoryName}: Props) => {
+const CategoryItem = ({ posts = [], noimg, categoryName}: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
@@ -39,4 +39,4 @@ const categoryItem = ({ posts, noimg, categoryName}: Props) => {
     </div>
   );
 };
-export default categoryItem;
+export default CategoryItem;
