@@ -1,11 +1,11 @@
-import Header from '@/component/Header';
-import Hero from '@/component/Hero';
-import Category from '@/component/Category';
-import News from '@/component/News';
-import Data from '@/data/data.json';
-import Profile from '@/component/Profile';
-import Footer from '@/component/Footer';
-import { Post } from '@/types/types';
+import Header from "@/component/Header_1";
+import Hero from "@/component/Hero_1";
+import Category from "@/component/Category_1";
+import News from "@/component/News_1";
+import Data from "@/data/data.json";
+import Profile from "@/component/Profile_1";
+import Footer from "@/component/Footer_1";
+import { Post } from "@/types/types";
 
 export async function getStaticProps() {
   const url = Data.top.wpurl;
@@ -20,9 +20,6 @@ export async function getStaticProps() {
 }
 
 export default function index({ posts }: { posts: Post[] }) {
-
-
-
   return (
     <>
       <Header nav={Data.top.header.nav} />

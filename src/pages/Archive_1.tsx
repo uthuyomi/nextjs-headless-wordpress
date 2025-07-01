@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import Header from "@/component/Header";
-import ArchiveItem from "@/pages/ArchiveItem";
-import Footer from "@/component/Footer";
+import Header from "@/component/Header_1";
+import ArchiveItem from "@/pages/ArchiveItem_1";
+import Footer from "@/component/Footer_1";
 import style from "@/styles/archive.module.scss";
 import Data from "@/data/data.json";
 import { Post } from "@/types/types";

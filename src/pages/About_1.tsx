@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "@/component/Header";
-import Footer from "@/component/Footer";
+import Header from "@/component/Header_1";
+import Footer from "@/component/Footer_1";
 import style from "@/styles/about.module.scss";
-import AboutHero from "@/component/about/AboutHero";
-import AboutDescription from "../component/about/AboutDescription";
-import AboutSkill from "../component/about/AboutSkill";
-import AboutLink from "../component/about/AboutLink";
-import AboutContact from "../component/about/AboutContact";
+import AboutHero from "@/component/About_1/AboutHero_1";
+import AboutDescription from "../component/About_1/AboutDescription_1";
+import AboutSkill from "../component/About_1/AboutSkill_1";
+import AboutLink from "../component/About_1/AboutLink_1";
+import AboutContact from "../component/About_1/AboutContact_1";
 import Data from "@/data/data.json";
 
 const About = () => {
