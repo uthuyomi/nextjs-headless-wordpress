@@ -30,7 +30,7 @@ const CategoryItem = ({ posts = [], noimg, categoryName}: Props) => {
               <span className={style.categoryLabel}>{categoryName}</span>
             </div>
             <Link href={`/blog/${post.slug}`}>
-              <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+              <p dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             </Link>
             <p>{new Date(post.date).toLocaleDateString()}</p>
           </article>
