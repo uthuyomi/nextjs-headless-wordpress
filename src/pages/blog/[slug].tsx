@@ -3,7 +3,7 @@ import Head from "next/head";
 import style from "@/styles/blog.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Header from "@/component/Header_1";
+import Header from "@/component/Header";
 import Link from "next/link";
 import Data from "@/data/data.json";
 import { Post } from "@/types/types";

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import Header from "@/component/Header_1";
-import CategoryItem from "@/pages/CategoryItem_1";
-import Footer from "@/component/Footer_1";
+import Header from "@/component/Header";
+import CategoryItem from "@/pages/CategoryItem";
+import Footer from "@/component/Footer";
 import style from "@/styles/archive.module.scss";
 import Data from "@/data/data.json";
 import { Post } from "@/types/types";

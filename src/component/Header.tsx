@@ -1,5 +1,5 @@
 import style from "@/component/Header.module.scss";
-import Nav from "./Nav_1";
+import Nav from "./Nav";
 
 export type DataProps = {
   nav: {

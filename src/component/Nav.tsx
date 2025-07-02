@@ -1,5 +1,5 @@
 import React from "react";
-import { DataProps } from "./Header_1";
+import { DataProps } from "./Header";
 
 const Nav = ({ nav }: DataProps) => {
   return (
