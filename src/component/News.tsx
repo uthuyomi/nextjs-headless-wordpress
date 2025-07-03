@@ -44,7 +44,7 @@ const News = ({ news, newsPost }: NewsProps) => {
               <div className={style.articleContentItem}>
                 <div className={style.articleImage}>
                   <Image
-                    src={item.jetpack_featured_media_url || news.noimg}
+                    src={item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || news.noimg}
                     alt={item.title.rendered}
                     width={300}
                     height={200}
