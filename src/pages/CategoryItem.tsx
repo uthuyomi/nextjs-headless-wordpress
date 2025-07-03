@@ -14,8 +14,9 @@ const CategoryItem = ({ posts = [], noimg, categoryName}: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
-        //サムネイル取得
-        const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+         const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+
+        console.log(thumbnail);
 
         return (
           <article className={style.blogContentItem} key={post.id}>

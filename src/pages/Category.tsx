@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
 import CategoryItem from "@/pages/CategoryItem";
@@ -12,7 +12,7 @@ type Props = {
   posts: Post[];
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const url = `${Data.top.wpurl}?_embed&per_page=100`;
   const res = await fetch(url);
   const posts = await res.json();

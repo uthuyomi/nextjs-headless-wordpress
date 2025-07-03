@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import Header from "@/component/Header";
 import ArchiveItem from "@/pages/ArchiveItem";
@@ -11,8 +11,8 @@ type Props = {
   posts: Post[];
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const url = `${Data.top.wpurl}&per_page=100`;
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const url = `${Data.top.wpurl}?_embed&per_page=100`;
   const res = await fetch(url);
   const posts = await res.json();
   return { props: { posts } };
