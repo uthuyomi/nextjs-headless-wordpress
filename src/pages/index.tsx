@@ -8,7 +8,7 @@ import Footer from "@/component/Footer";
 import { Post } from "@/types/types";
 
 export async function getStaticProps() {
-  const url = Data.top.wpurl;
+  const url = `${Data.top.wpurl}?_embed&per_page=100`;
   const res = await fetch(url);
   const posts = await res.json();
 

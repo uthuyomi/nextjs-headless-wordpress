@@ -1,6 +1,6 @@
 {
   "top": {
-    "wpurl": "https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts?_embed",
+    "wpurl": "https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts",
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
