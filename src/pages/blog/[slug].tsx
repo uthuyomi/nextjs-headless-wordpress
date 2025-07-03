@@ -111,7 +111,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params?.slug;
+  const slug = decodeURIComponent(params?.slug as string);
   const res = await fetch(
     `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts?slug=${slug}`
   );
