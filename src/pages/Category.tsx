@@ -56,6 +56,7 @@ const Category = ({ posts }: Props) => {
       ? posts.filter((post) => post.categories?.includes(Number(category)))
       : posts;
 
+      console.log(posts[0]);
   return (
     <>
       <Header nav={Data.top.header.nav} />
