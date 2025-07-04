@@ -18,7 +18,10 @@ type NewsProps = {
 };
 
 const News = ({ news, newsPost }: NewsProps) => {
-
+  const postsWishThumbnail = newsPost.map((item) => ({
+    ...item,
+    thumbnail: item._embedded?.["wp:featuredmedia"]?.[0]?.source_url,
+  }));
   return (
     <div className={style.article}>
       <h2>{news.title}</h2>
@@ -39,12 +42,12 @@ const News = ({ news, newsPost }: NewsProps) => {
             1024: { slidesPerView: 3, centeredSlides: false },
           }}
         >
-          {newsPost.map((item) => (
+          {postsWishThumbnail.map((item) => (
             <SwiperSlide key={item.id}>
               <div className={style.articleContentItem}>
                 <div className={style.articleImage}>
                   <Image
-                    src={item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || news.noimg}
+                    src={item.thumbnail || news.noimg}
                     alt={item.title.rendered}
                     width={300}
                     height={200}
