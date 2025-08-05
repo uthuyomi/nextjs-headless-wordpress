@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "@/component/Header";
-import Footer from "@/component/Footer";
+import Footer from "@/component/common/footer/Footer";
 import style from "@/styles/about.module.scss";
 import AboutHero from "@/component/About/AboutHero";
-import AboutDescription from "../component/About/AboutDescription";
-import AboutSkill from "../component/About/AboutSkill";
-import AboutLink from "../component/About/AboutLink";
-import AboutContact from "../component/About/AboutContact";
+import AboutDescription from "../../component/About/AboutDescription";
+import AboutSkill from "../../component/About/AboutSkill";
+import AboutLink from "../../component/About/AboutLink";
+import AboutContact from "../../component/About/AboutContact";
 import Data from "@/data/data.json";
 
-const About = () => {
+const page = () => {
   return (
     <>
       <Header nav={Data.top.header.nav} />
@@ -25,4 +25,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default page;

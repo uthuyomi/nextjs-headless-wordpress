@@ -1,5 +1,5 @@
 import React from "react";
-import style from "@/component/Footer.module.scss";
+import style from "@/component/common/footer/Footer.module.scss";
 
 type footerProps = {
   footer: {

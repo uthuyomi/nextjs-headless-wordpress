@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import style from "@/component/Profile.module.scss";
+import style from "@/component/Home/profile/Profile.module.scss";
 type aboutProps = {
   about: {
     title: string;

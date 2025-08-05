@@ -1,4 +1,4 @@
-import style from "@/component/Header.module.scss";
+import style from "@/component/common/header/Header.module.scss";
 import Nav from "./Nav";
 
 export type DataProps = {

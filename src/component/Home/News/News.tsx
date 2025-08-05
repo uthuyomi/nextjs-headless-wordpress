@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import style from "@/component/News.module.scss";
+import style from "@/component/Home/News/News.module.scss";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -72,12 +74,8 @@ const News = ({ news, newsPost }: NewsProps) => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div
-          id="button_prev_news"
-          className="swiper-button-prev"></div>
-        <div
-          id="button_next_news"
-          className="swiper-button-next"></div>
+        <div id="button_prev_news" className="swiper-button-prev"></div>
+        <div id="button_next_news" className="swiper-button-next"></div>
       </div>
     </div>
   );

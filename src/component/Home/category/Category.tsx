@@ -1,4 +1,6 @@
-import style from "@/component/Category.module.scss";
+"use client"
+
+import style from "@/component/Home/category/Category.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import "swiper/css";
