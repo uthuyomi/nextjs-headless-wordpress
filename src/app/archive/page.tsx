@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import Header from "@/component/Header";
+import Header from "@/component/common/header/Header";
 import ArchiveItem from "@/component/Archive/ArchiveItem";
 import Footer from "@/component/common/footer/Footer";
 import style from "@/styles/archive.module.scss";

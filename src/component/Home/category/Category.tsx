@@ -61,7 +61,7 @@ const Category = ({ category }: categoryProps) => {
               <div className={style.categoryContentItem}>
                 <h3>{item.name}</h3>
                 <p>{item.description || category.noDescription}</p>
-                <Link href={`/Category?category=${item.id}`}>
+                <Link href={`category/${item.slug}`}>
                   {category.more}
                 </Link>
               </div>

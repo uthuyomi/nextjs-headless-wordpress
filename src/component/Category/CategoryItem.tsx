@@ -1,3 +1,5 @@
+"use client"; // クライアントコンポーネント化
+
 import React from "react";
 import style from "@/styles/archive.module.scss";
 import Link from "next/link";
@@ -10,13 +12,14 @@ type Props = {
   categoryName: string;
 };
 
-const CategoryItem = ({ posts = [], noimg, categoryName}: Props) => {
+const CategoryItem = ({ posts = [], noimg, categoryName }: Props) => {
   return (
     <div className={style.blogContent}>
       {posts.map((post) => {
-         const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+        const thumbnail = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
-        console.log(thumbnail);
+        // ブラウザのconsoleに出る
+        console.log("Post thumbnail:", thumbnail);
 
         return (
           <article className={style.blogContentItem} key={post.id}>
@@ -40,4 +43,5 @@ const CategoryItem = ({ posts = [], noimg, categoryName}: Props) => {
     </div>
   );
 };
+
 export default CategoryItem;
