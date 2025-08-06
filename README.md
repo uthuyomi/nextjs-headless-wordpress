@@ -12,9 +12,9 @@ src/app/
 ├─ page.tsx # トップページ（/）
 ├─ layout.tsx # 共通レイアウト
 │
-|- about/
-| └─ page.tsx # /about - プロフィールページ
-|
+├─ about/
+│ └─ page.tsx # /about - プロフィールページ
+│
 ├─ archive/
 │ └─ page.tsx # /archive - 全件アーカイブ
 │
@@ -27,20 +27,18 @@ src/app/
 └─ [category]/
 └─ page.tsx # /category/[slug] - カテゴリ別記事一覧
 
-
-
-
+---
 
 ### 🔹 ページ一覧
 
-| パス                    | 役割                           | データ取得                       |
-|-------------------------|--------------------------------|----------------------------------|
-| `/`                     | トップページ                   | `data.json` + Swiper（CSR）      |
-| `/about`                | プロフィールページ　            | `data.json` +                    |
-| `/archive`              | 全件アーカイブ                  | WordPress REST API（SSR）        |
-| `/category`             | カテゴリ一覧スライダー          | WordPress REST API（CSR）        |
-| `/category/[slug]`      | カテゴリ別記事一覧              | WordPress REST API（SSR）        |
-| `/blog/[slug]`          | 記事詳細ページ                  | WordPress REST API（ISR/SSR）    |
+| パス                 | 役割                         | データ取得                         |
+|---------------------|-----------------------------|------------------------------------|
+| `/`                 | トップページ                 | `data.json` + Swiper（CSR）        |
+| `/about`            | プロフィールページ           | 静的 / `data.json`                 |
+| `/archive`          | 全件アーカイブ               | WordPress REST API（SSR）          |
+| `/category`         | カテゴリ一覧スライダー       | WordPress REST API（CSR）          |
+| `/category/[slug]`  | カテゴリ別記事一覧           | WordPress REST API（SSR）          |
+| `/blog/[slug]`      | 記事詳細ページ               | WordPress REST API（ISR/SSR）      |
 
 ---
 
@@ -54,12 +52,14 @@ src/app/
 - **SCSS Modules**
 - **ISR / SSR / CSR を用途に応じて使い分け**
 
+---
 
 ## 🖼 画像対応
 
 - 外部画像（WordPressのアイキャッチ）は `next/image` で最適化
 - `next.config.js` に外部ドメインを登録済み
 
+---
 
 ## 🚀 開発環境
 
