@@ -4,8 +4,8 @@
     "header": {
       "nav": [
         { "label": "home", "url": "/" },
-        { "label": "archive", "url": "/Archive" },
-        { "label": "about", "url": "/About" },
+        { "label": "archive", "url": "/archive" },
+        { "label": "about", "url": "/about" },
         { "label": "us", "url": "https://webyayasu.com" }
       ]
     },
