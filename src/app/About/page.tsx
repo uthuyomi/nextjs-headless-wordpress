@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@/component/Header";
+import Header from "@/component/common/header/Header";
 import Footer from "@/component/common/footer/Footer";
 import style from "@/styles/about.module.scss";
 import AboutHero from "@/component/About/AboutHero";

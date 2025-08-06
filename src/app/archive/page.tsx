@@ -1,42 +1,29 @@
-import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
 import Header from "@/component/common/header/Header";
-import ArchiveItem from "@/component/Archive/ArchiveItem";
 import Footer from "@/component/common/footer/Footer";
+import ArchiveItem from "@/component/Archive/ArchiveItem";
 import style from "@/styles/archive.module.scss";
 import Data from "@/data/data.json";
 import { Post } from "@/types/types";
 
-type Props = {
-  posts: Post[];
-};
+export const dynamic = "force-dynamic"; // SSR強制
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+async function getPosts(): Promise<Post[]> {
   const url = `${Data.top.wpurl}?_embed&per_page=100`;
-  const res = await fetch(url);
-  const posts = await res.json();
-  return { props: { posts } };
-};
+  const res = await fetch(url, { cache: "no-store" });
+  return res.json();
+}
 
-const Archive = ({ posts }: Props) => {
-  const router = useRouter();
-  const { category } = router.query;
-
-  const filteredPosts =
-    typeof category === "string"
-      ? posts.filter((post) => post.categories?.includes(Number(category)))
-      : posts;
+export default async function ArchiveIndexPage() {
+  const posts = await getPosts();
 
   return (
     <>
       <Header nav={Data.top.header.nav} />
       <section className={style.archive}>
         <h2 className={style.heading}>記事一覧</h2>
-        <ArchiveItem posts={filteredPosts} noimg={Data.archive.noimg} />
+        <ArchiveItem posts={posts} noimg={Data.archive.noimg} />
       </section>
       <Footer footer={Data.top.footer} />
     </>
   );
-};
-
-export default Archive;
+}
