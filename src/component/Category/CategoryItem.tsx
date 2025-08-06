@@ -4,7 +4,7 @@ import React from "react";
 import style from "@/styles/archive.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { Post } from "@/types/types";
+import { Post } from "@/types/archive";
 
 type Props = {
   posts?: Post[];

@@ -3,7 +3,7 @@ import Footer from "@/component/common/footer/Footer";
 import ArchiveItem from "@/component/Archive/ArchiveItem";
 import style from "@/styles/archive.module.scss";
 import Data from "@/data/data.json";
-import { Post } from "@/types/types";
+import { Post } from "@/types/archive";
 
 export const dynamic = "force-dynamic"; // SSR強制
 

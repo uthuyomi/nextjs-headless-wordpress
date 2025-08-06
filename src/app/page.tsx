@@ -5,7 +5,7 @@ import News from "@/component/Home/News/News";
 import Data from "@/data/data.json";
 import Profile from "@/component/Home/profile/Profile";
 import Footer from "@/component/common/footer/Footer";
-import { Post } from "@/types/types";
+import { Post } from "@/types/archive";
 
 async function getPosts(): Promise<Post[]> {
   const url = `${Data.top.wpurl}?_embed&per_page=100`;

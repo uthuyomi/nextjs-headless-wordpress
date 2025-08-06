@@ -5,19 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import style from "@/styles/blog.module.scss";
 import Data from "@/data/data.json";
+import { WP_Post } from "@/types/blog";
 
-type WP_Post = {
-  id: number;
-  slug: string;
-  title: { rendered: string };
-  content: { rendered: string };
-  excerpt: { rendered: string };
-  date: string;
-  author: number;
-  categories: number[];
-  tags: number[];
-  featured_media: number;
-};
+
 
 async function getPost(slug: string) {
   const res = await fetch(

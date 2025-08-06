@@ -2,16 +2,7 @@ import React from "react";
 import style from "@/component/Home/hero/Hero.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-
-type HeroProps = {
-  hero: {
-    title: string;
-    subtitle: string;
-    buttontext: string;
-    buttonlink: string;
-    imageUrl: string;
-  };
-};
+import { HeroProps } from "@/types/home";
 
 const Hero = ({ hero }: HeroProps) => {
   return (

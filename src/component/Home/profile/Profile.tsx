@@ -2,17 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import style from "@/component/Home/profile/Profile.module.scss";
-type aboutProps = {
-  about: {
-    title: string;
-    content: string;
-    imageUrl: string;
-    aboutText: string;
-    aboutLink: string;
-  };
-};
+import { ProfileProps } from "@/types/home";
 
-const Profile = ({ about }: aboutProps) => {
+const Profile = ({ about }: ProfileProps) => {
   return (
     <div className={style.profile}>
       <h2>{about.title}</h2>

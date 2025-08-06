@@ -3,7 +3,7 @@ import Header from "@/component/common/header/Header";
 import Footer from "@/component/common/footer/Footer";
 import style from "@/styles/archive.module.scss";
 import Data from "@/data/data.json";
-import { Post } from "@/types/types";
+import { Post } from "@/types/archive";
 import CategoryItem from "@/component/Category/CategoryItem";
 
 export const dynamic = "force-dynamic"; // SSR強制で毎回fetch

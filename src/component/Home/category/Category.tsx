@@ -1,30 +1,16 @@
-"use client"
+"use client";
 
 import style from "@/component/Home/category/Category.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { WP_Category, CategoryProps } from "@/types/home";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-type WP_Category = {
-  id: number;
-  name: string;
-  description: string;
-  slug: string;
-};
-
-type categoryProps = {
-  category: {
-    title: string;
-    noDescription: string;
-    more: string;
-  };
-};
-
-const Category = ({ category }: categoryProps) => {
+const Category = ({ category }: CategoryProps) => {
   const [categories, setCategories] = useState<WP_Category[]>([]);
 
   useEffect(() => {
@@ -61,9 +47,7 @@ const Category = ({ category }: categoryProps) => {
               <div className={style.categoryContentItem}>
                 <h3>{item.name}</h3>
                 <p>{item.description || category.noDescription}</p>
-                <Link href={`category/${item.slug}`}>
-                  {category.more}
-                </Link>
+                <Link href={`category/${item.slug}`}>{category.more}</Link>
               </div>
             </SwiperSlide>
           ))}

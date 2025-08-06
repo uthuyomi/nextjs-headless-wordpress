@@ -8,16 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { Post } from "@/types/types";
-
-type NewsProps = {
-  newsPost: Post[];
-  news: {
-    title: string;
-    noimg: string;
-    linkLabel: string;
-  };
-};
+import { NewsProps } from "@/types/home";
 
 const News = ({ news, newsPost }: NewsProps) => {
   const postsWishThumbnail = newsPost.map((item) => ({

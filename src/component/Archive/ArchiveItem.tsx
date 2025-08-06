@@ -2,12 +2,8 @@ import React from "react";
 import style from "@/styles/archive.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { Post } from "@/types/types";
+import { Props } from "@/types/archive"
 
-type Props = {
-  posts?: Post[]; // ← undefined許容（安全のため）
-  noimg: string;
-};
 
 const ArchiveItem = ({ posts = [], noimg }: Props) => {
   return (
