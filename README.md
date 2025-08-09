@@ -1,8 +1,8 @@
 # Headless WordPress Blog with Next.js App Router
 
-このプロジェクトは **Next.js 15 (App Router)** と **WordPress REST API** を使用した  
-ヘッドレスCMS構成のブログサイトです。  
-フロントエンドは完全に静的またはISRで生成され、WordPressはデータ提供のみを行います。
+Next.js 15(App Router)とWordPress REST APIを使用し、ヘッドレスCMS構成のブログサイトを構築しました。  
+フロントは静的生成(ISR)やサーバーサイドレンダリング(SSR)を用途に応じて切り替え、WordPressはデータ提供専用に使用しています。  
+**目的**：個人学習と技術検証、およびヘッドレスCMS構成の実装経験獲得。
 
 ---
 
