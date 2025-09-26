@@ -5,8 +5,7 @@
       "nav": [
         { "label": "home", "url": "/" },
         { "label": "archive", "url": "/archive" },
-        { "label": "about", "url": "/about" },
-        { "label": "us", "url": "https://webyayasu.com" }
+        { "label": "about", "url": "/about" }
       ]
     },
     "hero": {
