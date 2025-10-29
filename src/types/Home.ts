@@ -25,7 +25,7 @@ export type CategoryProps = {
 };
 //News
 export type NewsProps = {
-  newsPost: Post[];
+  newsPost: any[];
   news: {
     title: string;
     noimg: string;

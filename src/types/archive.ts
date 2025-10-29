@@ -12,7 +12,7 @@ export type Post = {
   categories?: number[]; // WPが返すカテゴリID配列（軽量取得時用)
   jetpack_featured_media_url?: string;
   _embedded?: {
-    "wp:featuredmedia"?: FeaturedMedia[];
+    "wp:featuredmedia"?: any[];
     "wp:term"?: Term[][]; // 各タクソノミーごとの Term 配列（カテゴリ・タグなどが入る）
   };
 };

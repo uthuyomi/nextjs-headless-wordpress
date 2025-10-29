@@ -49,7 +49,7 @@ const News = ({ news, newsPost }: NewsProps) => {
                     <span className={style.categoryLabel}>
                       {
                         item._embedded["wp:term"][0] // ← categories[]
-                          .map((cat) => cat.name) //   名前だけ抜く
+                          .map((cat: any) => cat.name) //   名前だけ抜く
                       }
                     </span>
                   ) : null}

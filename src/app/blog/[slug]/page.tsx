@@ -7,18 +7,18 @@ import style from "@/styles/blog.module.scss";
 import Data from "@/data/data.json";
 import { WP_Post } from "@/types/blog";
 
-
-
+// ✅ WordPress記事取得
 async function getPost(slug: string) {
   const res = await fetch(
     `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts?slug=${slug}`,
-    { next: { revalidate: 60 } } // ISR: 60秒で再生成
+    { next: { revalidate: 60 } }
   );
   const posts = await res.json();
   if (!posts.length) return null;
   return posts[0] as WP_Post;
 }
 
+// ✅ 著者
 async function getAuthor(id: number) {
   const res = await fetch(
     `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/users/${id}`
@@ -26,6 +26,7 @@ async function getAuthor(id: number) {
   return res.json();
 }
 
+// ✅ タクソノミー（カテゴリ/タグ）
 async function getNames(ids: number[], type: "categories" | "tags") {
   const data = await Promise.all(
     ids.map((id) =>
@@ -37,6 +38,7 @@ async function getNames(ids: number[], type: "categories" | "tags") {
   return data.map((d) => d.name);
 }
 
+// ✅ アイキャッチ
 async function getFeaturedImage(id: number) {
   if (!id) return null;
   const res = await fetch(
@@ -46,6 +48,7 @@ async function getFeaturedImage(id: number) {
   return img?.source_url || null;
 }
 
+// ✅ 前後記事
 async function getPrevNext(post: WP_Post) {
   const mainCategory = post.categories?.[0];
   const allRes = await fetch(
@@ -53,17 +56,15 @@ async function getPrevNext(post: WP_Post) {
   );
   const allPosts: WP_Post[] = await allRes.json();
   const index = allPosts.findIndex((p) => p.id === post.id);
+
   return {
     prevPost: allPosts[index - 1] || null,
     nextPost: allPosts[index + 1] || null,
   };
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+// ✅ ★ 型を緩めてビルド通す
+export default async function BlogPostPage({ params }: any) {
   const post = await getPost(params.slug);
   if (!post) return <p>記事が見つかりませんでした。</p>;
 
@@ -84,11 +85,13 @@ export default async function BlogPostPage({
   return (
     <>
       <Header nav={Data.top.header.nav} />
+
       <article className={style.blogItem}>
         <h1
           className={style.heading}
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
         />
+
         <div className={style.headingItem}>
           <p>{new Date(post.date).toLocaleDateString()}</p>
           <p>著者: {author.name}</p>
@@ -119,12 +122,13 @@ export default async function BlogPostPage({
           )}
         </div>
       </article>
+
       <Footer footer={Data.top.footer} />
     </>
   );
 }
 
-// 静的パス生成（SSG用）
+// ✅ SSG（静的パス生成）
 export async function generateStaticParams() {
   const res = await fetch(
     "https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/posts"

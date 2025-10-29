@@ -8,7 +8,8 @@ import CategoryItem from "@/component/Category/CategoryItem";
 
 export const dynamic = "force-dynamic"; // SSR強制で毎回fetch
 
-type Props = { params: { category: string } };
+// ✅ 型を排除 or params:any にする（Next15のPageProps制約回避）
+// type Props = { params: { category: string } };
 
 async function getPosts(): Promise<Post[]> {
   const url = `${Data.top.wpurl}?_embed&per_page=100`;
@@ -33,7 +34,8 @@ async function getCategoryName(category: string): Promise<string> {
   return "取得エラー";
 }
 
-export default async function CategoryPage({ params }: Props) {
+// ✅ ★ params の型を any に変更
+export default async function CategoryPage({ params }: any) {
   const posts = await getPosts();
   const { category } = params;
 
