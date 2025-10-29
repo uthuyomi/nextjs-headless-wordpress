@@ -6,15 +6,12 @@ import Data from "@/data/data.json";
 import { Post } from "@/types/archive";
 import CategoryItem from "@/component/Category/CategoryItem";
 
-export const dynamic = "force-dynamic"; // SSR強制で毎回fetch
-
-// ✅ 型を排除 or params:any にする（Next15のPageProps制約回避）
-// type Props = { params: { category: string } };
+export const dynamic = "force-dynamic";
 
 async function getPosts(): Promise<Post[]> {
   const url = `${Data.top.wpurl}?_embed&per_page=100`;
   const res = await fetch(url, { cache: "no-store" });
-  return res.json();
+  return (await res.json()) as Post[];
 }
 
 async function getCategoryName(category: string): Promise<string> {
@@ -23,21 +20,20 @@ async function getCategoryName(category: string): Promise<string> {
     ? `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories/${category}`
     : `https://webyayasu.sakura.ne.jp/uthuyomizyuku/wp-json/wp/v2/categories?slug=${category}`;
 
-  console.log("Category API URL:", url);
-
   const res = await fetch(url, { cache: "no-store" });
   const data = await res.json();
 
   if (Array.isArray(data)) return data[0]?.name ?? "取得エラー";
-  if (data && typeof data === "object")
-    return (data as any).name ?? "取得エラー";
-  return "取得エラー";
+  return data?.name ?? "取得エラー";
 }
 
-// ✅ ★ params の型を any に変更
-export default async function CategoryPage({ params }: any) {
+export default function CategoryPage({ params }: any) {
+  return <CategoryPageInner params={params} />;
+}
+
+async function CategoryPageInner({ params }: any) {
   const posts = await getPosts();
-  const { category } = params;
+  const category = params.category;
 
   const categoryName = await getCategoryName(category);
 
